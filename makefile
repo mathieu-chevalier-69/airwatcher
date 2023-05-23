@@ -1,10 +1,10 @@
 PROJET = AirWatcher
 
 # Compilateur
-CC = gcc
+CC = g++
 
 # Options de compilation
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -std=c++11
 
 # Répertoires
 SRCDIR = src

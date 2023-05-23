@@ -5,20 +5,26 @@
 using namespace std;
 #include<string>
 #include<map>
+#include<utility>
 
-#include"../utile/Coordonee.h"
+#include"../utile/Coordonnees.h"
 #include"../utile/Date.h"
 #include "Mesure.h"
 
+typedef map<Date,Mesure> MapMesures;
+
 class Capteur {
     public : 
+
         string id; 
-        Coordonee coordonee;
-        map<Date, Mesure> mesures;
+        Coordonnees coordonees;
+        MapMesures mesures;
         string proprietaire;
-        Capteur(string id, float longitude, float latitude, string proprietaire) : id(id), proprietaire(proprietaire){};
 
+        Capteur(const string & id, const float & longitude, const float & latitude, const string & proprietaire)
+        : id(id), coordonees(latitude, longitude), proprietaire(proprietaire){};
 
+        void ajouterMesure(const Mesure & mesure, const Date & date);
         
         virtual ~Capteur();   
 

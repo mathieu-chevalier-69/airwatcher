@@ -1,3 +1,6 @@
+#ifndef Donnees_H // Directives du préprocesseur pour éviter les inclusions multiples
+#define Donnees_H
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -13,4 +16,4 @@ class Donnees{
         DonneesCapteurs donneesCapteurs;
         DonneesUtilisateurs donneesUtilisateurs;
         DonneesPurificateurs donneesPurificateurs;
-}
+};

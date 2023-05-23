@@ -6,16 +6,12 @@ using namespace std;
 
         Donnees::Donnees()
         {
-            FluxImport flux = new FluxImport();
+            //FluxImport flux;
 
-            donneesCapteurs = new DonneesCapteurs();
-            donneesCapteurs.listeCapteurs = flux.importerCapteurs();
-
-            donneesUtilisateurs = new DonneesUtilisateurs();
+            
+           /* donneesCapteurs.listeCapteurs = flux.importerCapteurs();
             donneesUtilisateurs.listeUtilisateurs = flux.importerUtilisateur();
-
-            donneesPurificateurs = new DonneesPurificateurs();
-            donneesPurificateurs.listePurificateurs = flux.importerPurificateur();
+            donneesPurificateurs.listePurificateurs = flux.importerPurificateur();*/
         }
         
         Donnees::~Donnees()
