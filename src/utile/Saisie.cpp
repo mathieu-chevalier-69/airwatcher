@@ -65,5 +65,26 @@ int Saisie::saisirInt(string message)
 
 Coordonnee Saisie::saisirCoordonnees(string message)
 {
-    cout << message << endl;
+    float longitude;
+    cin >> longitude;
+    while(std::cin.fail()) 
+    {
+        cin.clear();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+        cout << "Saisie invalide. Re-essayer:\n";
+        cin >> longitude;
+    }
+
+
+    float latitude;
+    cin >> latitude;
+    while(std::cin.fail()) 
+    {
+        cin.clear();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+        cout << "Saisie invalide. Re-essayer:\n";
+        cin >> latitude;
+    }
+
+    
 }
