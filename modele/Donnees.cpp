@@ -1,7 +1,5 @@
 #include <iostream>
-#include "DonneesCapteurs.h"
-#include "DonneesUtilisateurs.h"
-#include "DonneesPurificateurs.h"
+#include "Donnees.h"
 
 class Donnees{
     public:
