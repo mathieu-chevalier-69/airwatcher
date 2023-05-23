@@ -15,7 +15,7 @@ class Date {
         : jour(jour), mois(mois), annee(annee) {};
 
         bool operator<(const Date& autreDate) const;
-        bool operator=(const Date& autreDate) const;
+        bool operator==(const Date& autreDate) const;
 
         
         virtual ~Date();   
