@@ -11,7 +11,7 @@
 #define Gouvernement_H
 
 //--------------------------------------------------- Interfaces utilisées
-
+#include "Utilisateur.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -22,11 +22,14 @@
 //
 //------------------------------------------------------------------------
 
-class Gouvernement 
+class Gouvernement : public Utilisateur
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
+
+string id;
+string nom;
 //----------------------------------------------------- Méthodes publiques
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :
@@ -50,7 +53,9 @@ public:
     // Contrat :
     //
 
-    Gouvernement ( );
+    Gouvernement (string email, string motDePasse, string identifiant, string n );
+   
+    
     // Mode d'emploi :
     //
     // Contrat :

@@ -12,8 +12,8 @@ class Mesure {
         float concentrationNO2;
         float concentrationSO2;
         float concentrationPM10;
-        
-        Mesure(float O3, float NO2, float SO2, float PM10) 
+
+        Mesure(const float O3, const float NO2, const float SO2, const float PM10) 
         : concentrationO3(O3), concentrationNO2(NO2), concentrationSO2(SO2), concentrationPM10(PM10){};
 
 

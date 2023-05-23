@@ -1,12 +1,12 @@
 /*************************************************************************
-                           Utilisateur  -  description
+                           Coordonnees  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Réalisation de la classe <Utilisateur> (fichier Utilisateur.cpp) ------------
+//---------- Réalisation de la classe <Coordonnees> (fichier Coordonnees.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -15,61 +15,60 @@
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "Utilisateur.h"
+#include "Coordonnees.h"
+#include <cmath>
 
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-// type Utilisateur::Méthode ( liste des paramètres )
+// type Coordonnees::Méthode ( liste des paramètres )
 // Algorithme :
 //
 //{
 //} //----- Fin de Méthode
 
-
-//------------------------------------------------- Surcharge d'opérateurs
-Utilisateur & Utilisateur::operator = ( const Utilisateur & unUtilisateur )
-// Algorithme :
-//
+Coordonnees::Coordonnees ( const float latitude, const float longitude )
+:latitude(latitude),longitude(longitude)
 {
-} //----- Fin de operator =
+}
 
-
-//-------------------------------------------- Constructeurs - destructeur
-Utilisateur::Utilisateur ( const Utilisateur & unUtilisateur )
+Coordonnees::Coordonnees ( )
+:latitude(0), longitude(0)
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Utilisateur>" << endl;
+    cout << "Appel au constructeur de <Coordonnees>" << endl;
 #endif
-} //----- Fin de Utilisateur (constructeur de copie)
+} //----- Fin de Coordonnees
 
 
-Utilisateur::Utilisateur ( string mail, string mdp )
-// Algorithme :
-//
-{
-    email = mail;
-    motDePasse = mdp;
-
-#ifdef MAP
-    cout << "Appel au constructeur de <Utilisateur>" << endl;
-#endif
-} //----- Fin de Utilisateur
-
-
-Utilisateur::~Utilisateur ( )
+Coordonnees::~Coordonnees ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Utilisateur>" << endl;
+    cout << "Appel au destructeur de <Coordonnees>" << endl;
 #endif
-} //----- Fin de ~Utilisateur
+} //----- Fin de ~Coordonnees
 
+bool Coordonnees::dansLeCercle(Coordonnees centreCercle, float rayon)
+{
+    float distance = Coordonnees::distance(*this, centreCercle);
+    return distance <= rayon;
+}
+
+float Coordonnees::distance(Coordonnees pointA, Coordonnees pointB)
+{
+    float deltaLongitude = pointB.longitude - pointA.longitude;
+
+    float distance = acos(sin(pointA.latitude)*sin(pointB.latitude)+cos(pointA.latitude)*cos(pointB.latitude)*cos(deltaLongitude));
+    distance *= 6378137;
+
+    return distance;
+}
 
 //------------------------------------------------------------------ PRIVE
 

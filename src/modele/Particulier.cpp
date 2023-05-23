@@ -48,10 +48,11 @@ Particulier::Particulier ( const Particulier & unParticulier )
 } //----- Fin de Particulier (constructeur de copie)
 
 
-Particulier::Particulier ( )
+Particulier::Particulier (string email, string motDePasse, string identifiant, string cID ) : Utilisateur(email,motDePasse), id(identifiant), capteurId(cID)
 // Algorithme :
 //
 {
+    
 #ifdef MAP
     cout << "Appel au constructeur de <Particulier>" << endl;
 #endif

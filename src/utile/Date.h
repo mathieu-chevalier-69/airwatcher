@@ -11,11 +11,11 @@ class Date {
         int jour;
         int mois; 
         int annee; 
-        Date(int jour, int mois, int annee) 
+        Date(const int jour, const int mois, const int annee) 
         : jour(jour), mois(mois), annee(annee) {};
 
         bool operator<(const Date& autreDate) const;
-        bool operator=(const Date& autreDate) const;
+        bool operator==(const Date& autreDate) const;
 
         
         virtual ~Date();   

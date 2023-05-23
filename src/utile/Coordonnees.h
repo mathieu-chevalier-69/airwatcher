@@ -1,71 +1,54 @@
 /*************************************************************************
-                           Entreprise  -  description
+                           Coordonnees  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Interface de la classe <Entreprise> (fichier Entreprise.h) ----------------
-#if ! defined ( Entreprise_H )
-#define Entreprise_H
+//---------- Interface de la classe <Coordonnees> (fichier Coordonnees.h) ----------------
+#if ! defined ( Coordonnees_H )
+#define Coordonnees_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include "Utilisateur.h"
-#include <string>
+
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Entreprise>
+// Rôle de la classe <Coordonnees>
 //
 //
 //------------------------------------------------------------------------
 
-class Entreprise : public Utilisateur
+class Coordonnees 
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
-
-string id;
-string purificateurId;
-//----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste des paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-
-//------------------------------------------------- Surcharge d'opérateurs
-    Entreprise & operator = ( const Entreprise & unEntreprise );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-
+    float latitude;
+    float longitude;
 //-------------------------------------------- Constructeurs - destructeur
-    Entreprise ( const Entreprise & unEntreprise );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
 
-    Entreprise (string email, string motDePasse, string identifiant, string purifiId );
-   
+    Coordonnees ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Entreprise ( );
+    Coordonnees ( const float latitude, const float longitude );
+
+
+    virtual ~Coordonnees ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
+
+    bool dansLeCercle(Coordonnees centreCercle, float rayon);
+
+    static float distance(Coordonnees pointA, Coordonnees pointB);
 
 //------------------------------------------------------------------ PRIVE
 
@@ -76,6 +59,6 @@ protected:
 
 };
 
-//-------------------------------- Autres définitions dépendantes de <Entreprise>
+//-------------------------------- Autres définitions dépendantes de <Coordonnees>
 
-#endif // Entreprise_H
+#endif // Coordonnees_H

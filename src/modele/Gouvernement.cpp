@@ -17,6 +17,7 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Gouvernement.h"
 
+
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
@@ -48,7 +49,7 @@ Gouvernement::Gouvernement ( const Gouvernement & unGouvernement )
 } //----- Fin de Gouvernement (constructeur de copie)
 
 
-Gouvernement::Gouvernement ( )
+Gouvernement::Gouvernement (string email, string motDePasse, string identifiant,string n ) :  Utilisateur(email,motDePasse), id(identifiant), nom(n)
 // Algorithme :
 //
 {

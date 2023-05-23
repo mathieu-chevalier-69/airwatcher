@@ -11,7 +11,7 @@
 #define Utilisateur_H
 
 //--------------------------------------------------- Interfaces utilisées
-
+#include <string>
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -27,6 +27,9 @@ class Utilisateur
 //----------------------------------------------------------------- PUBLIC
 
 public:
+string email;
+string motDePasse;
+
 //----------------------------------------------------- Méthodes publiques
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :
@@ -50,7 +53,7 @@ public:
     // Contrat :
     //
 
-    Utilisateur ( );
+    Utilisateur ( string email, string motDePasse  );
     // Mode d'emploi :
     //
     // Contrat :
@@ -68,7 +71,6 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-
 };
 
 //-------------------------------- Autres définitions dépendantes de <Utilisateur>
