@@ -31,12 +31,6 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Gouvernement & Gouvernement::operator = ( const Gouvernement & unGouvernement )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
 Gouvernement::Gouvernement ( const Gouvernement & unGouvernement )

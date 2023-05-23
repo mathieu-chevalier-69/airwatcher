@@ -12,11 +12,14 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include <map>
+#include <utility>
 #include "Utilisateur.h"
+//#include "Capteur.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
 
+typedef std::map<std::string, Utilisateur > listeUtilisateurs ;
 //------------------------------------------------------------------------
 // Rôle de la classe <DonneesUtilisateurs>
 //
@@ -28,22 +31,20 @@ class DonneesUtilisateurs
 //----------------------------------------------------------------- PUBLIC
 
 public:
-typedef std::map<std::string, Utilisateur> listeUtilisateurs ;
+listeUtilisateurs listeU;
 //----------------------------------------------------- Méthodes publiques
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :
     //
     // Contrat :
-    //
+    // 
+    //Utilisateur TrouverUtilisateurParCapteur(Capteur c);
+    void AjouterUtilisateurDansListe(const Utilisateur  u);
+    
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    DonneesUtilisateurs & operator = ( const DonneesUtilisateurs & unDonneesUtilisateurs );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
+   
 
 //-------------------------------------------- Constructeurs - destructeur
     DonneesUtilisateurs( const DonneesUtilisateurs& unDonneesUtilisateurs);

@@ -30,11 +30,6 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Entreprise & Entreprise::operator = ( const Entreprise & unEntreprise )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
 
 //-------------------------------------------- Constructeurs - destructeur

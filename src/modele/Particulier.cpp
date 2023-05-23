@@ -30,12 +30,6 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Particulier & Particulier::operator = ( const Particulier & unParticulier )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
 Particulier::Particulier ( const Particulier & unParticulier )

@@ -39,11 +39,7 @@ string nom;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Gouvernement & operator = ( const Gouvernement & unGouvernement );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+    
 
 
 //-------------------------------------------- Constructeurs - destructeur

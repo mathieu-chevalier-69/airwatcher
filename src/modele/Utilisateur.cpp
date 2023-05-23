@@ -30,11 +30,6 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Utilisateur & Utilisateur::operator = ( const Utilisateur & unUtilisateur )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
 
 //-------------------------------------------- Constructeurs - destructeur
@@ -60,6 +55,15 @@ Utilisateur::Utilisateur ( string mail, string mdp )
 #endif
 } //----- Fin de Utilisateur
 
+Utilisateur::Utilisateur ( )
+// Algorithme :
+//
+{
+
+#ifdef MAP
+    cout << "Appel au constructeur de <Utilisateur>" << endl;
+#endif
+} //----- Fin de Utilisateur
 
 Utilisateur::~Utilisateur ( )
 // Algorithme :

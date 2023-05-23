@@ -39,11 +39,7 @@ string capteurId;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Particulier & operator = ( const Particulier & unParticulier );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+   
 
 
 //-------------------------------------------- Constructeurs - destructeur
