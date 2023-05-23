@@ -3,7 +3,7 @@
 
 class Donnees{
     public:
-        Donnees()
+        Donnees::Donnees()
         {
             FluxImport flux = new FluxImport();
 
@@ -16,31 +16,31 @@ class Donnees{
             donneesPurificateurs = new DonneesPurificateurs();
             donneesPurificateurs.setListePurificateurs(flux.importerPurificateur());
         }
-        DonneesCapteurs getDonneesCapteurs()
+        DonneesCapteurs Donnees::getDonneesCapteurs()
         {
             return donneesCapteurs;
         }
-        DonneesUtilisateurs getDonneesUtilisateurs()
+        DonneesUtilisateurs Donnees::getDonneesUtilisateurs()
         {
             return donneesUtilisateurs;
         }
-        DonneesPurificateurs getDonneesPurificateurs()
+        DonneesPurificateurs Donnees::getDonneesPurificateurs()
         {
             return donneesPurificateurs;
         }
-        void setDonneesCapteurs(DonneesCapteurs dc)
+        void Donnees::setDonneesCapteurs(DonneesCapteurs dc)
         {
             donneesCapteurs = dc;
         }
-        void setDonneesUtilisateurs(DonneesUtilisateurs du)
+        void Donnees::setDonneesUtilisateurs(DonneesUtilisateurs du)
         {
             donneesUtilisateurs = du;
         }
-        void setDonneesPurificateurs(DonneesPurificateurs dp)
+        void Donnees::setDonneesPurificateurs(DonneesPurificateurs dp)
         {
             donneesPurificateurs = dp;
         }
-        ~Donnees()
+        Donnees::~Donnees()
         {
 
         }
