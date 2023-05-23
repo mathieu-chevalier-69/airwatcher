@@ -12,6 +12,7 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include <string>
+#include "Utilisateur.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -22,7 +23,7 @@
 //
 //------------------------------------------------------------------------
 
-class Particulier : Utilisateur
+class Particulier : public Utilisateur
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -52,7 +53,7 @@ string capteurId;
     // Contrat :
     //
 
-    Particulier (string email, string motDePasse, string identifiant, string cID ) : Utilisateur(email,motDePasse), id(identifiant), capteurId(cId);
+    Particulier (string email, string motDePasse, string identifiant, string cID );
     // Mode d'emploi :
     //
     // Contrat :

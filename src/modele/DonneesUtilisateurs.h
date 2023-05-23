@@ -12,6 +12,7 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include <map>
+#include "Utilisateur.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -27,7 +28,7 @@ class DonneesUtilisateurs
 //----------------------------------------------------------------- PUBLIC
 
 public:
-map <email, Utilisateur> listeUtilisateurs;
+typedef std::map<std::string, Utilisateur> listeUtilisateurs ;
 //----------------------------------------------------- Méthodes publiques
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :

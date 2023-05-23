@@ -48,7 +48,7 @@ Entreprise::Entreprise ( const Entreprise & unEntreprise )
 } //----- Fin de Entreprise (constructeur de copie)
 
 
-Entreprise::Entreprise ( )
+Entreprise::Entreprise (string email, string motDePasse, string identifiant, string purifiId ) : Utilisateur(email,motDePasse), id(identifiant), purificateurId(purifiId)
 // Algorithme :
 //
 {

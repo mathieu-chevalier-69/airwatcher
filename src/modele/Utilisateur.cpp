@@ -48,10 +48,13 @@ Utilisateur::Utilisateur ( const Utilisateur & unUtilisateur )
 } //----- Fin de Utilisateur (constructeur de copie)
 
 
-Utilisateur::Utilisateur ( )
+Utilisateur::Utilisateur ( string mail, string mdp )
 // Algorithme :
 //
 {
+    email = mail;
+    motDePasse = mdp;
+
 #ifdef MAP
     cout << "Appel au constructeur de <Utilisateur>" << endl;
 #endif
