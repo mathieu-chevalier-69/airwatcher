@@ -1,3 +1,6 @@
+#ifndef Saisie_H // Directives du préprocesseur pour éviter les inclusions multiples
+#define Saisie_H
+
 #include <iostream>
 #include <string>
 #include <limits>

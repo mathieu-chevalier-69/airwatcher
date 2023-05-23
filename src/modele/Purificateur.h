@@ -1,3 +1,6 @@
+#ifndef Purificateur_H // Directives du préprocesseur pour éviter les inclusions multiples
+#define Purificateur_H
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -9,7 +12,7 @@ class Purificateur{
     public:
 
         Purificateur();
-        
+
         string id;
         Coordonnees coordonnees;
         Date startTime;
