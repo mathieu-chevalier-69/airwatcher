@@ -3,3 +3,4 @@ obj
 .vscode
 src/utile/a.out
 src/utile/test.cpp
+test
