@@ -4,19 +4,17 @@
 // Inclusions des autres fichiers d'en-tête si nécessaire
 using namespace std;
 #include<string>
-// Déclarations des constantes si nécessaire
 
-// Déclarations des classes
 
-class Mesure {
+class Mesures {
     public : 
-        string id; 
+        float 
         float valeur;
-        Mesure(string id, float valeur) : id(id), valeur(valeur){};
+        Mesures(string id, float valeur) : id(id), valeur(valeur){};
 
 
         
-        virtual ~Mesure();   
+        virtual ~Mesures();   
 
 
     protected : 

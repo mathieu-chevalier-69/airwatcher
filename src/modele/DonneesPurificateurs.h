@@ -1,14 +1,14 @@
 /*************************************************************************
-                           Particulier  -  description
+                           DonneesPurificateurs  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Interface de la classe <Particulier> (fichier Particulier.h) ----------------
-#if ! defined ( Particulier_H )
-#define Particulier_H
+//---------- Interface de la classe <DonneesPurificateurs> (fichier DonneesPurificateurs.h) ----------------
+#if ! defined ( DonneesPurificateurs_H )
+#define DonneesPurificateurs_H
 
 //--------------------------------------------------- Interfaces utilisées
 
@@ -17,12 +17,12 @@
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Particulier>
+// Rôle de la classe <DonneesPurificateurs>
 //
 //
 //------------------------------------------------------------------------
 
-class Particulier 
+class DonneesPurificateurs 
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -36,7 +36,7 @@ public:
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Particulier & operator = ( const Particulier & unParticulier );
+    DonneesPurificateurs & operator = ( const DonneesPurificateurs & unDonneesPurificateurs );
     // Mode d'emploi :
     //
     // Contrat :
@@ -44,19 +44,19 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Particulier ( const Particulier & unParticulier );
+    DonneesPurificateurs( const DonneesPurificateurs& unDonneesPurificateurs);
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Particulier ( );
+    DonneesPurificateurs( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Particulier ( );
+    virtual ~DonneesPurificateurs( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -71,6 +71,6 @@ protected:
 
 };
 
-//-------------------------------- Autres définitions dépendantes de <Particulier>
+//-------------------------------- Autres définitions dépendantes de <DonneesDonneesDonneesPurificateursss>
 
-#endif // Particulier_H
+#endif // DonneesDonneesDonneesPurificateursss_H

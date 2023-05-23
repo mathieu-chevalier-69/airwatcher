@@ -1,12 +1,12 @@
 /*************************************************************************
-                           Particulier  -  description
+                           DonneesPurificateurs  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Réalisation de la classe <Particulier> (fichier Particulier.cpp) ------------
+//---------- Réalisation de la classe <DonneesPurificateurs> (fichier DonneesPurificateurs.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -15,14 +15,14 @@
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "Particulier.h"
+#include "DonneesPurificateurs.h"
 
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-// type Particulier::Méthode ( liste des paramètres )
+// type DonneesPurificateurs::Méthode ( liste des paramètres )
 // Algorithme :
 //
 //{
@@ -30,7 +30,7 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Particulier & Particulier::operator = ( const Particulier & unParticulier )
+DonneesPurificateurs & DonneesPurificateurs::operator = ( const DonneesPurificateurs & unDonneesPurificateurs )
 // Algorithme :
 //
 {
@@ -38,34 +38,34 @@ Particulier & Particulier::operator = ( const Particulier & unParticulier )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Particulier::Particulier ( const Particulier & unParticulier )
+DonneesPurificateurs::DonneesPurificateurs ( const DonneesPurificateurs & unDonneesPurificateurs )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Particulier>" << endl;
+    cout << "Appel au constructeur de copie de <DonneesPurificateurs>" << endl;
 #endif
-} //----- Fin de Particulier (constructeur de copie)
+} //----- Fin de DonneesPurificateurs (constructeur de copie)
 
 
-Particulier::Particulier ( )
+DonneesPurificateurs::DonneesPurificateurs ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Particulier>" << endl;
+    cout << "Appel au constructeur de <DonneesPurificateurs>" << endl;
 #endif
-} //----- Fin de Particulier
+} //----- Fin de DonneesPurificateurs
 
 
-Particulier::~Particulier ( )
+DonneesPurificateurs::~DonneesPurificateurs ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Particulier>" << endl;
+    cout << "Appel au destructeur de <DonneesPurificateurs>" << endl;
 #endif
-} //----- Fin de ~Particulier
+} //----- Fin de ~DonneesPurificateurs
 
 
 //------------------------------------------------------------------ PRIVE
