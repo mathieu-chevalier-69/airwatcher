@@ -15,7 +15,7 @@
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "DonneesUtilisateurs.h"
+#include "./DonneesUtilisateurs.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,14 +27,32 @@ using namespace std;
 //
 //{
 //} //----- Fin de Méthode
+void DonneesUtilisateurs::AjouterUtilisateurDansListe(const Utilisateur u)
 
+{
+    string email = u.email;
+//pour ne pas ajouter des hit cible/referer qui ne sont pas dans le créneau horaire demandé
+    //int compare = cible.compare("nepasutiliser");
+    
+        
+        listeUtilisateurs::iterator it = listeU.find(email);
+        //pour l'ajout d'une paire dont la cible est déjà connue
+        if(it== listeU.end())
+        {
+           
+            
+            listeU.insert(make_pair(email, u));
+            it = listeU.find(email);
+            
+        }
+        //ajout d'une paire dont la cible n'est pas connue
+        
+
+
+
+}
 
 //------------------------------------------------- Surcharge d'opérateurs
-DonneesUtilisateurs & DonneesUtilisateurs::operator = ( const DonneesUtilisateurs & unDonneesUtilisateurs )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
 
 //-------------------------------------------- Constructeurs - destructeur

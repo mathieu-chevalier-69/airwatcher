@@ -39,11 +39,7 @@ string motDePasse;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Utilisateur & operator = ( const Utilisateur & unUtilisateur );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+   
 
 
 //-------------------------------------------- Constructeurs - destructeur
@@ -59,6 +55,11 @@ string motDePasse;
     // Contrat :
     //
 
+     Utilisateur ( );
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
     virtual ~Utilisateur ( );
     // Mode d'emploi :
     //

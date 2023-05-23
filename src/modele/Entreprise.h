@@ -40,11 +40,7 @@ string purificateurId;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Entreprise & operator = ( const Entreprise & unEntreprise );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+  
 
 
 //-------------------------------------------- Constructeurs - destructeur
