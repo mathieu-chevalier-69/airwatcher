@@ -5,6 +5,7 @@
 using namespace std;
 #include<string>
 #include<map>
+#include<utility>
 
 #include"../utile/Coordonnees.h"
 #include"../utile/Date.h"
@@ -22,7 +23,7 @@ class Capteur {
         Capteur(const string & id, const float & longitude, const float & latitude, const string & proprietaire)
         : id(id), coordonees(latitude, longitude), proprietaire(proprietaire){};
 
-        void AjouterMesure(const Mesure & mesure, const Date & date);
+        void ajouterMesure(const Mesure & mesure, const Date & date);
         
         virtual ~Capteur();   
 
