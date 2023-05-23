@@ -1,39 +1,25 @@
 #include <iostream>
+using namespace std;
+
 #include "Donnees.h"
 
-class Donnees{
-    public:
-        Donnees()
-        {
 
-        }
-        DonneesCapteurs getDonneesCapteurs()
+        Donnees::Donnees()
         {
+            FluxImport flux = new FluxImport();
 
-        }
-        DonneesUtilisateurs getDonneesUtilisateurs()
-        {
+            donneesCapteurs = new DonneesCapteurs();
+            donneesCapteurs.listeCapteurs = flux.importerCapteurs();
 
-        }
-        DonneesPurificateurs getDonneesPurificateurs()
-        {
+            donneesUtilisateurs = new DonneesUtilisateurs();
+            donneesUtilisateurs.listeUtilisateurs = flux.importerUtilisateur();
 
+            donneesPurificateurs = new DonneesPurificateurs();
+            donneesPurificateurs.listePurificateurs = flux.importerPurificateur();
         }
-        void setDonneesCapteurs(DonneesCapteurs)
-        {
-
-        }
-        void setDonneesUtilisateurs(DonneesUtilisateurs)
-        {
-
-        }
-        void setDonneesPurificateurs(DonneesPurificateurs)
-        {
-
-        }
-        ~Donnees()
+        
+        Donnees::~Donnees()
         {
 
         }
     
-}
