@@ -18,3 +18,5 @@ class Donnees{
         DonneesUtilisateurs donneesUtilisateurs;
         DonneesPurificateurs donneesPurificateurs;
 };
+
+#endif

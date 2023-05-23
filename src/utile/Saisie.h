@@ -17,3 +17,5 @@ class Saisie{
         static int saisirInt(string);
         static Coordonnees saisirCoordonnees(string);
 };
+
+#endif
