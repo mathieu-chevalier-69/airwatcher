@@ -12,6 +12,7 @@ class Purificateur{
     public:
 
         Purificateur();
+        Purificateur(string, Coordonnees, Date,Date,string);
 
         string id;
         Coordonnees coordonnees;
