@@ -1,7 +1,7 @@
 #include"Capteur.h"
 
-void Capteur::AjouterMesure(const Mesure & mesure, const Date & date){
-    //mesures.insert({date, mesure});
+void Capteur::ajouterMesure(const Mesure & mesure, const Date & date){
+    mesures.insert(make_pair(date, mesure));
 }
 
 Capteur::~Capteur(){
