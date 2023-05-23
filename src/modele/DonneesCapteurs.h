@@ -1,74 +1,33 @@
-/*************************************************************************
-                           DonneesCapteurs  -  description
-                             -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
-*************************************************************************/
-
-//---------- Interface de la classe <DonneesCapteurs> (fichier DonneesCapteurs.h) ----------------
 #if ! defined ( DonneesCapteurs_H )
 #define DonneesCapteurs_H
 
-//--------------------------------------------------- Interfaces utilisées
+#include"Capteur.h"
+#include<vector>
 
-//------------------------------------------------------------- Constantes
-
-//------------------------------------------------------------------ Types
-
-//------------------------------------------------------------------------
-// Rôle de la classe <DonneesCapteurs>
-//
-//
-//------------------------------------------------------------------------
+typedef vector<Capteur> ListeCapteurs;
+typedef vector<Mesure> ListeMesures;
 
 class DonneesCapteurs 
 {
-//----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste des paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+//-------------------------------------------- Attributs
+    ListeCapteurs listeCapteurs;
 
+//-------------------------------------------- Méthodes publiques
 
-//------------------------------------------------- Surcharge d'opérateurs
-    DonneesCapteurs & operator = ( const DonneesCapteurs & unDonneesCapteurs );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
+    ListeCapteurs capteurDansZone(const Coordonnees & centre, const float & rayon = 20);
+    ListeMesures trouverMesures(const string & idCapteur, const Date & dateDebut, const Date & dateFin);
+    Capteur & trouverCapteurParId(const string & idCapteur);
 
 //-------------------------------------------- Constructeurs - destructeur
-    DonneesCapteurs( const DonneesCapteurs& unDonneesCapteurs);
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
+    DonneesCapteurs(const ListeCapteurs & listeCapteurs) 
+    : listeCapteurs(listeCapteurs) {} ; 
 
-    DonneesCapteurs( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+    DonneesCapteurs();
 
     virtual ~DonneesCapteurs( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-//------------------------------------------------------------------ PRIVE
-
-protected:
-//----------------------------------------------------- Méthodes protégées
-
-//----------------------------------------------------- Attributs protégés
-
+    
 };
 
 //-------------------------------- Autres définitions dépendantes de <DonneesDonneesDonneesCapteursss>
