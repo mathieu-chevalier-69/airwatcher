@@ -1,8 +1,9 @@
 #include <iostream>
+using namespace std;
+
 #include "Donnees.h"
 
-class Donnees{
-    public:
+
         Donnees::Donnees()
         {
             FluxImport flux = new FluxImport();
@@ -22,4 +23,3 @@ class Donnees{
 
         }
     
-}

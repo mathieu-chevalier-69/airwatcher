@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+using namespace std;
+
 #include "DonneesCapteurs.h"
 #include "DonneesUtilisateurs.h"
 #include "DonneesPurificateurs.h"
