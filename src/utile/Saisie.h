@@ -4,7 +4,7 @@
 using namespace std;
 
 #include "Date.h"
-#include "Coordonnee.h"
+#include "Coordonnees.h"
 
 class Saisie{
     public:
@@ -12,5 +12,5 @@ class Saisie{
         ~Saisie();
         static Date saisirDate(string);
         static int saisirInt(string);
-        static Coordonnee saisirCoordonnees(string);
+        static Coordonnees saisirCoordonnees(string);
 };

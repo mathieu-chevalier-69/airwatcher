@@ -63,9 +63,11 @@ int Saisie::saisirInt(string message)
 }
 
 
-Coordonnee Saisie::saisirCoordonnees(string message)
+Coordonnees Saisie::saisirCoordonnees(string message)
 {
+    cout << message << endl;
     float longitude;
+    cout << "Veuillez saisir la longitude: ";
     cin >> longitude;
     while(std::cin.fail()) 
     {
@@ -77,6 +79,7 @@ Coordonnee Saisie::saisirCoordonnees(string message)
 
 
     float latitude;
+    cout << "Veuillez saisir la latitude: ";
     cin >> latitude;
     while(std::cin.fail()) 
     {
@@ -86,5 +89,6 @@ Coordonnee Saisie::saisirCoordonnees(string message)
         cin >> latitude;
     }
 
-    
+    Coordonnees c = Coordonnees(latitude, longitude);
+    return c;
 }
