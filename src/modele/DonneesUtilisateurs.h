@@ -11,7 +11,7 @@
 #define DonneesUtilisateurs_H
 
 //--------------------------------------------------- Interfaces utilisées
-
+#include <map>
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -27,6 +27,7 @@ class DonneesUtilisateurs
 //----------------------------------------------------------------- PUBLIC
 
 public:
+map <email, Utilisateur> listeUtilisateurs;
 //----------------------------------------------------- Méthodes publiques
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :
@@ -71,6 +72,6 @@ protected:
 
 };
 
-//-------------------------------- Autres définitions dépendantes de <DonneesDonneesDonneesUtilisateursss>
+//-------------------------------- Autres définitions dépendantes de <DonneesUtilisateurs>
 
-#endif // DonneesDonneesDonneesUtilisateursss_H
+#endif // DonneesUtilisateurs_H

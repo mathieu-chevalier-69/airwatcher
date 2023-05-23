@@ -11,7 +11,7 @@
 #define Particulier_H
 
 //--------------------------------------------------- Interfaces utilisées
-
+#include <string>
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -22,11 +22,13 @@
 //
 //------------------------------------------------------------------------
 
-class Particulier 
+class Particulier : Utilisateur
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
+string id;
+string capteurId;
 //----------------------------------------------------- Méthodes publiques
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :
@@ -50,7 +52,7 @@ public:
     // Contrat :
     //
 
-    Particulier ( );
+    Particulier (string email, string motDePasse, string identifiant, string cID ) : Utilisateur(email,motDePasse), id(identifiant), capteurId(cId);
     // Mode d'emploi :
     //
     // Contrat :
