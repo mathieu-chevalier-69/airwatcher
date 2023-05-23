@@ -11,7 +11,8 @@
 #define Entreprise_H
 
 //--------------------------------------------------- Interfaces utilisées
-
+#include "Utilisateur.h"
+#include <string>
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -22,11 +23,14 @@
 //
 //------------------------------------------------------------------------
 
-class Entreprise 
+class Entreprise : public Utilisateur
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
+
+string id;
+string purificateurId;
 //----------------------------------------------------- Méthodes publiques
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :
@@ -50,7 +54,8 @@ public:
     // Contrat :
     //
 
-    Entreprise ( );
+    Entreprise (string email, string motDePasse, string identifiant, string purifiId );
+   
     // Mode d'emploi :
     //
     // Contrat :
