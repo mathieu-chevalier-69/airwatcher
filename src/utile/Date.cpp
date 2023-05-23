@@ -16,7 +16,7 @@ bool Date::operator<(const Date& autreDate) const {
 }
 
 bool Date::operator==(const Date& autreDate) const{
-    return (this->annee == autreDate.annee) && (this->mois == autreDate.mois) && (this->jour == autreDate.jour);
+    return (this->annee == autreDate.annee) && (this->mois == autreDate.mois) && (this->annee == autreDate.mois);
 }
 
 Date::~Date(){}

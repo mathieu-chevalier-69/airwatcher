@@ -14,4 +14,4 @@ class Donnees{
         DonneesCapteurs donneesCapteurs;
         DonneesUtilisateurs donneesUtilisateurs;
         DonneesPurificateurs donneesPurificateurs;
-}
+};
