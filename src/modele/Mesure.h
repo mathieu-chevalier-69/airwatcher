@@ -16,6 +16,7 @@ class Mesure {
         Mesure(const float O3, const float NO2, const float SO2, const float PM10) 
         : concentrationO3(O3), concentrationNO2(NO2), concentrationSO2(SO2), concentrationPM10(PM10){};
 
+        setAttribute(string, float);
 
         
         virtual ~Mesure();   
