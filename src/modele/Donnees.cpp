@@ -6,7 +6,6 @@ using namespace std;
 
 
         Donnees::Donnees()
-        :donneesCapteurs(DonneesCapteurs())
         {
             FluxImport flux;
             

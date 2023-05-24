@@ -24,5 +24,6 @@ int main(){
     // cout << "2 :" << mesure1.concentrationO3 << " 1 : " << mesure1.concentrationSO2 << endl;
 
     Donnees donnees;
+    cout << donnees.donneesCapteurs.listeCapteurs.size() << endl;
     return 0;
 }
