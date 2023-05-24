@@ -25,7 +25,6 @@ public:
     : listeCapteurs(listeCapteurs) {} ; 
 
     DonneesCapteurs();
-
     virtual ~DonneesCapteurs( );
     
 };

@@ -62,10 +62,25 @@ bool Coordonnees::dansLeCercle(Coordonnees centreCercle, float rayon)
 
 float Coordonnees::distance(Coordonnees pointA, Coordonnees pointB)
 {
-    float deltaLongitude = pointB.longitude - pointA.longitude;
+    // Rayon de la Terre en kilomètres
+    const float rayonTerre = 6371.0;
 
-    float distance = acos(sin(pointA.latitude)*sin(pointB.latitude)+cos(pointA.latitude)*cos(pointB.latitude)*cos(deltaLongitude));
-    distance *= 6378137;
+    // Conversion des latitudes et longitudes en radians
+    float latA = pointA.latitude * M_PI / 180.0;
+    float lonA = pointA.longitude * M_PI / 180.0;
+    float latB = pointB.latitude * M_PI / 180.0;
+    float lonB = pointB.longitude * M_PI / 180.0;
+
+    // Calcul des différences de latitudes et longitudes
+    float deltaLat = latB - latA;
+    float deltaLon = lonB - lonA;
+
+    // Calcul de la distance géodésique
+    float a = sin(deltaLat / 2) * sin(deltaLat / 2) +
+              cos(latA) * cos(latB) *
+              sin(deltaLon / 2) * sin(deltaLon / 2);
+    float c = 2 * atan2(sqrt(a), sqrt(1 - a));
+    float distance = rayonTerre * c;
 
     return distance;
 }
