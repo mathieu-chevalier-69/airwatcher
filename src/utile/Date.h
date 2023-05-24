@@ -3,7 +3,7 @@
 
 // Inclusions des autres fichiers d'en-tête si nécessaire
 using namespace std;
-#include<string>
+#include <string>
 
 
 class Date {
@@ -14,11 +14,9 @@ class Date {
         Date();
         Date(const int jour, const int mois, const int annee) 
         : jour(jour), mois(mois), annee(annee) {};
-
+        Date(string);
         bool operator<(const Date& autreDate) const;
         bool operator==(const Date& autreDate) const;
-
-        
         virtual ~Date();   
 
 
