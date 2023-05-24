@@ -14,3 +14,9 @@ void Mesure::setAttribute(string id, float value)
         concentrationPM10 = value;
     }
 }
+
+ostream& operator<<(ostream& os, const Mesure& ms)
+{
+    os << "O3: " << ms.concentrationO3 << " / NO2: " << ms.concentrationNO2 << " / SO2: " << ms.concentrationSO2  << " / PM10: " << ms.concentrationPM10;
+    return os;
+}

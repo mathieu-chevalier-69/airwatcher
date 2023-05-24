@@ -39,7 +39,6 @@ Date::Date(string dateTimeString)
     jour = stoi(jourString);
     mois = stoi(moisString);
     annee = stoi(anneeString);
-
 }
 
 ostream& operator <<(ostream & os, const Date date)
