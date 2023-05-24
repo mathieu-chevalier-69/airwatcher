@@ -29,8 +29,7 @@ class LecteurCsv
 
 public:
 
-    static std::vector<std::vector<std::string> > lireCsv(const std::string nomFichier);
-    static std::vector<std::string> separer(const std::string chaine, char separateur);
+    static std::vector<std::vector<std::string> > lireCsv(const std::string& nomFichier);
 
 //------------------------------------------------------------------ PRIVE
 

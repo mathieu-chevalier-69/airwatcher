@@ -1,5 +1,8 @@
 #include"Date.h"
 
+Date::Date()
+:jour(1), mois(1), annee(2000)
+{}
 
 bool Date::operator<(const Date& autreDate) const {
     bool vrai;

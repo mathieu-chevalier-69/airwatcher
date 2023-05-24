@@ -28,26 +28,6 @@ using namespace std;
 //{
 //} //----- Fin de Méthode
 
-
-//------------------------------------------------- Surcharge d'opérateurs
-DonneesCapteurs & DonneesCapteurs::operator = ( const DonneesCapteurs & unDonneesCapteurs )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
-
-//-------------------------------------------- Constructeurs - destructeur
-DonneesCapteurs::DonneesCapteurs ( const DonneesCapteurs & unDonneesCapteurs )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <DonneesCapteurs>" << endl;
-#endif
-} //----- Fin de DonneesCapteurs (constructeur de copie)
-
-
 DonneesCapteurs::DonneesCapteurs ( )
 // Algorithme :
 //

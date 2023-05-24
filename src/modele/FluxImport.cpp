@@ -17,7 +17,6 @@ vector<Capteur> FluxImport::importerCapteurs()
 
     //Affectation des capteurs privés aux utilisateurs
     donnees = LecteurCsv::lireCsv("./dataset/users.csv");
-    vector<vector<string>>::const_iterator iterateur;
     for(iterateur = donnees.begin(); iterateur < donnees.end(); iterateur++)
     {
         vector<Capteur>::iterator capteur;
