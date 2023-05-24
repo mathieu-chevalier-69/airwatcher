@@ -24,7 +24,7 @@ bool Date::operator==(const Date& autreDate) const{
 
 Date::Date(string dateTimeString)
 {
-    size_t pos = str.find(" "); 
+    size_t pos = dateTimeString.find(" "); 
     string dateString = dateTimeString.substr(0,pos);
 
     string anneeString = dateString.substr(0, dateString.find("-"));
@@ -36,9 +36,9 @@ Date::Date(string dateTimeString)
     string jourString = dateString.substr(0, dateString.find("-"));
     dateString.erase(dateString.begin(), dateString.begin() + dateString.find("-") + 1);
 
-    jour = atoi(jourString);
-    mois = atoi(moisString);
-    annee = atoi(anneeString);
+    jour = stoi(jourString);
+    mois = stoi(moisString);
+    annee = stoi(anneeString);
 
 }
 
