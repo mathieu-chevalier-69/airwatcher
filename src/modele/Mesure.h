@@ -4,7 +4,7 @@
 // Inclusions des autres fichiers d'en-tête si nécessaire
 using namespace std;
 #include<string>
-
+#include <iostream>
 
 class Mesure {
     public : 

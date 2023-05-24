@@ -1,4 +1,6 @@
+#include <iostream>
 #include "Mesure.h"
+
 
 Mesure::~Mesure(){}
 
