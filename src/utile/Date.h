@@ -4,7 +4,7 @@
 // Inclusions des autres fichiers d'en-tête si nécessaire
 using namespace std;
 #include <string>
-
+#include <iostream>
 
 class Date {
     public : 
@@ -18,7 +18,7 @@ class Date {
         bool operator<(const Date& autreDate) const;
         bool operator==(const Date& autreDate) const;
         virtual ~Date();   
-
+        friend ostream& operator <<(ostream & os, const Date date);
 
     protected : 
     

@@ -1,5 +1,5 @@
 #include"Date.h"
-
+#include <iostream>
 Date::Date()
 :jour(1), mois(1), annee(2000)
 {}
@@ -39,6 +39,12 @@ Date::Date(string dateTimeString)
     jour = stoi(jourString);
     mois = stoi(moisString);
     annee = stoi(anneeString);
+}
+
+ostream& operator <<(ostream & os, const Date date)
+{
+    os << date.jour << "/" << date.mois << "/" << date.annee ;
+    return os;
 }
 
 Date::~Date(){}
