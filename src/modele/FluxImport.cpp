@@ -33,5 +33,45 @@ vector<Capteur> FluxImport::importerCapteurs()
         }
     }
 
+    //Chargement des mesures
+    donnees = LecteurCsv::lireCsv("./dataset/measurements.csv");
+    map<string, map<Date, Mesure>> mesures;
+    for(iterateur = donnees.begin(); iterateur < donnees.end(); iterateur++)
+    {
+        Date date((*iterateur)[0]);
+        if(mesures.find( (*iterateur)[1] ) != mesures.end())
+        {
+            //Le capteur ID existe déjà
+            if(mesures[(*iterateur)[1]].find( date ) != mesures[(*iterateur)[1]].end())
+            {
+                // La date existe déjà
+                mesures[(*iterateur)[1]][date].setAttribute((*iterateur)[2], stof((*iterateur)[3]));
+            }
+            else
+            {
+                // La date existe pas
+                Mesure mesure;
+                mesure.setAttribute((*iterateur)[2], stof((*iterateur)[3]));
+                mesures[(*iterateur)[1]].insert({date, mesure});
+            }
+        }
+        else
+        {
+            //Le capteur ID existe pas
+            Mesure mesure;
+            mesure.setAttribute((*iterateur)[2], stof((*iterateur)[3]));
+            map<Date, Mesure> donneesCapteur;
+            donneesCapteur.insert({date, mesure});
+            mesures.insert({(*iterateur)[1], donneesCapteur});
+        }
+    }
+
+    vector<Capteur>::iterator capteur;
+    for(capteur = capteurs.begin(); capteur < capteurs.end(); capteur++)
+    {
+        if(mesures.find( capteur->id ) != mesures.end())
+            capteur->mesures = mesures[capteur->id];
+    }
+
     return capteurs;
 }
