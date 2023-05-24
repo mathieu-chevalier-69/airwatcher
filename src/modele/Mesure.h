@@ -19,7 +19,7 @@ class Mesure {
         : concentrationO3(O3), concentrationNO2(NO2), concentrationSO2(SO2), concentrationPM10(PM10){};
 
         void setAttribute(string, float);
-
+        friend ostream& operator<<(ostream& os, const Mesure& dt);
         
         virtual ~Mesure();   
 
