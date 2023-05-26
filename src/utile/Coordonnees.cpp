@@ -76,6 +76,7 @@ float Coordonnees::distance(Coordonnees pointA, Coordonnees pointB)
     return distance;
 }
 
-//------------------------------------------------------------------ PRIVE
-
-//----------------------------------------------------- Méthodes protégées
+ostream& operator<<(ostream& os, const Coordonnees& coordonnees){
+    os << "Latitude : " << coordonnees.latitude << ", Longitude : " << coordonnees.longitude;
+    return os;
+}

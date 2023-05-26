@@ -23,11 +23,11 @@ class Capteur {
 
         Capteur(const string & id, const float & longitude, const float & latitude, const string & proprietaire)
         : id(id), coordonees(latitude, longitude), proprietaire(proprietaire){};
+        virtual ~Capteur();   
 
         void ajouterMesure(const Mesure & mesure, const Date & date);
         
-        virtual ~Capteur();   
-
+        friend ostream& operator<<(ostream& os, const Capteur& capteur);
 
     protected : 
     

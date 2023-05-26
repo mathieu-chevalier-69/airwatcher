@@ -49,7 +49,7 @@ public:
     bool dansLeCercle(Coordonnees centreCercle, float rayon);
 
     static float distance(Coordonnees pointA, Coordonnees pointB);
-
+    friend ostream& operator<<(ostream& os, const Coordonnees& coordonnees);
 //------------------------------------------------------------------ PRIVE
 
 protected:

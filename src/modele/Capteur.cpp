@@ -7,3 +7,8 @@ void Capteur::ajouterMesure(const Mesure & mesure, const Date & date){
 Capteur::~Capteur(){
     
 }
+
+ostream& operator<<(ostream& os, const Capteur& capteur){
+    os << capteur.id << ": " << capteur.coordonees << ", Propriétaire : " << capteur.proprietaire;
+    return os;
+}
