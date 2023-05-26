@@ -3,7 +3,6 @@
 
 Mesure Service::voirStatsZone(const Coordonnees & pointCentral,const float & rayon, const Date & dateDebut,const Date & dateFin){
         
-
         //Récupération des capteurs dans la zone
         vector<Capteur> capteursDansZone;
 
@@ -38,7 +37,7 @@ Mesure Service::voirStatsZone(const Coordonnees & pointCentral,const float & ray
                 }
             }
         }
-        
+
         //Calcul de la moyenne des concentration et renvoi de la mesure moyenne
         concentrationNO2 /= nombreMesures;
         concentrationO3 /= nombreMesures;
@@ -47,4 +46,21 @@ Mesure Service::voirStatsZone(const Coordonnees & pointCentral,const float & ray
         
         Mesure moyenneZone (concentrationO3, concentrationNO2, concentrationSO2, concentrationPM10);
         return moyenneZone;
+}
+
+int Service::calculAtmo(Mesure mesure){
+
+    /* 
+    Méthode de calcul ATMO : 
+    Pour chacune des concentration (O3, SO2, NO3 et PM10), lui donner une note sur une échelle de 1 à 10
+    Prendre la note maximum entre ces 4 indices et la renvoyer
+    Les mesures allant jusqu'à 100, 10, la pire note correspond à une concentration de 100 µg/m3
+    */
+
+   int indiceO3 = (int)(mesure.concentrationO3/10);
+   int indiceSO2 = (int)(mesure.concentrationSO2/10);
+   int indiceNO2 = (int)(mesure.concentrationNO2/10);
+   int indicePM10 = (int)(mesure.concentrationPM10/10);
+
+   return max<int>({indiceO3, indiceSO2, indiceSO2, indicePM10});
 }

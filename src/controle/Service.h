@@ -13,13 +13,13 @@ class Service{
         Donnees donnees;
 
         Service(const Donnees & donnees) : donnees(donnees){};
-        
+
         Mesure voirStatsZone(const Coordonnees & pointCentral,const float & rayon,const Date & dateDebut,const Date & dateFin);
         pair<Mesure, Mesure> consulterImpactPurificateur(string idPurificateur);
         vector<Capteur> voirCapteursStatsSimilaires(string idCapteur);
         Mesure voirStatsSurUnPoint(Coordonnees point); 
         Mesure obtenirStatsCapteur(Capteur capteur);
-        float calculAtmo(Mesure); 
+        int calculAtmo(Mesure); 
 
 };
 
