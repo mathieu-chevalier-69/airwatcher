@@ -16,7 +16,6 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Coordonnees.h"
-#include <cmath>
 
 
 
