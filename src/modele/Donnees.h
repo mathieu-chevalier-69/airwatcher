@@ -11,11 +11,15 @@ using namespace std;
 
 class Donnees{
     public:
-        Donnees();
-        ~Donnees();
+
+        //Attributs
         DonneesCapteurs donneesCapteurs;
         DonneesUtilisateurs donneesUtilisateurs;
         DonneesPurificateurs donneesPurificateurs;
+        
+        //Constructeur - Destructeur
+        Donnees();
+        ~Donnees();
 };
 
 #endif
