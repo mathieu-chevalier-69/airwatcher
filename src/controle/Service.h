@@ -10,10 +10,15 @@ using namespace std;
 class Service{
 
     public : 
+        //Attributs de la classe
         Donnees donnees;
 
+        //Constructeurs et destructeurs de classe
+        Service(){};
         Service(const Donnees & donnees) : donnees(donnees){};
+        virtual ~Service(){};
 
+        //Methodes de la classe 
         Mesure voirStatsZone(const Coordonnees & pointCentral,const float & rayon,const Date & dateDebut,const Date & dateFin);
         pair<Mesure, Mesure> consulterImpactPurificateur(string idPurificateur);
         vector<Capteur> voirCapteursStatsSimilaires(string idCapteur);
