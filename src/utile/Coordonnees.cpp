@@ -18,16 +18,7 @@ using namespace std;
 #include "Coordonnees.h"
 #include <cmath>
 
-//------------------------------------------------------------- Constantes
 
-//----------------------------------------------------------------- PUBLIC
-
-//----------------------------------------------------- Méthodes publiques
-// type Coordonnees::Méthode ( liste des paramètres )
-// Algorithme :
-//
-//{
-//} //----- Fin de Méthode
 
 Coordonnees::Coordonnees ( const float latitude, const float longitude )
 :latitude(latitude),longitude(longitude)
