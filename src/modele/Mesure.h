@@ -26,7 +26,7 @@ class Mesure {
         void setAttribute(string, float);
         friend ostream& operator<<(ostream& os, const Mesure& dt);
         Mesure & operator+=(const Mesure & other);
-
+        Mesure & operator/(const int & diviseur);
     
 
 };

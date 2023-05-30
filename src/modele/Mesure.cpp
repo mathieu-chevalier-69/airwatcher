@@ -37,3 +37,12 @@ Mesure &Mesure::operator+=(const Mesure &other)
     concentrationPM10 += other.concentrationPM10;
     return *this;
 }
+
+Mesure &Mesure::operator/(const int &diviseur)
+{
+    concentrationO3 /= diviseur;
+    concentrationNO2 /= diviseur;
+    concentrationSO2 /= diviseur;
+    concentrationPM10 /= diviseur;
+    return *this;
+}
