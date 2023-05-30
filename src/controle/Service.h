@@ -20,10 +20,13 @@ class Service{
 
         //Methodes de la classe 
         Mesure voirStatsZone(const Coordonnees & pointCentral,const float & rayon,const Date & dateDebut,const Date & dateFin);
+
         pair<Mesure, Mesure> consulterImpactPurificateur(string idPurificateur);
+
         vector<Capteur> voirCapteursStatsSimilaires(string idCapteur);
+
         Mesure voirStatsSurUnPoint(Coordonnees point); 
-        Mesure obtenirStatsCapteur(Capteur capteur);
+        Mesure obtenirStatsCapteur(Capteur capteur, Date dateDebut, Date dateFin);
         int calculAtmo(Mesure); 
 
 };

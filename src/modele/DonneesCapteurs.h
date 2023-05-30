@@ -23,8 +23,8 @@ public:
 //-------------------------------------------- Constructeurs - destructeur
     DonneesCapteurs(const ListeCapteurs & listeCapteurs) 
     : listeCapteurs(listeCapteurs) {} ; 
-
     DonneesCapteurs();
+    
     virtual ~DonneesCapteurs( );
     
 };

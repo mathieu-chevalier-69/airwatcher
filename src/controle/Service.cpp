@@ -64,3 +64,21 @@ int Service::calculAtmo(Mesure mesure){
 
    return max<int>({indiceO3, indiceSO2, indiceSO2, indicePM10});
 }
+
+
+
+Mesure Service::obtenirStatsCapteur(Capteur capteur, Date dateDebut, Date dateFin){
+            Mesure mesureMoyenne; 
+            int nombreDeMesure = 0; 
+            
+            for(auto it = capteur.mesures.begin(); it != capteur.mesures.end(); ++it){
+                Date date = it->first;
+                if(date < dateFin && !(date < dateDebut)){
+                    Mesure mesure = it->second;
+                    mesureMoyenne += mesure;
+                }
+            }
+
+            return mesureMoyenne;
+
+}
