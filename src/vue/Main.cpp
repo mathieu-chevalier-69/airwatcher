@@ -33,7 +33,6 @@ int main()
     // Date fin(31,12,2019);
     // cout << "Moyenne :"<<service.obtenirStatsCapteur(service.donnees.donneesCapteurs.listeCapteurs[0], debut, fin) << endl;
     //Test::testerCapteurDansZone();
-    cout << service.donnees.donneesCapteurs.listeCapteurs.size() << endl;
     int choix = 0;
     do{
         cout << "0. Quitter" << endl;

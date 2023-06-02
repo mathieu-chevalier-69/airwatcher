@@ -99,16 +99,13 @@ vector<Capteur> FluxImport::retirerCapteursErrones(vector<Capteur> capteurs, flo
     moyenne.concentrationNO2 /= nbMesures;
     moyenne.concentrationPM10 /= nbMesures;
     moyenne.concentrationSO2 /= nbMesures;
-    cout << moyenne << endl;
 
     for (capteur = capteurs.begin(); capteur < capteurs.end(); capteur++)
     {
         MapMesures::iterator mesure;
-        cout << capteur->proprietaire << endl;
         if (capteur->proprietaire != "gouvernement")
             for (mesure = capteur->mesures.begin(); mesure != capteur->mesures.end(); mesure++)
             {
-                cout << abs(mesure->second.concentrationO3 - moyenne.concentrationO3) << endl;
                 if(abs(mesure->second.concentrationO3 - moyenne.concentrationO3) > margeErreur)
                 {
                     capteurs.erase(capteur);
