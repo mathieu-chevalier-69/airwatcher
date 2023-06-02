@@ -36,14 +36,14 @@ Purificateur DonneesPurificateurs::obtenirPurificateurParId(string idPurificateu
 {
     
     Purificateur purificateurRecupere;
-    // for(iterator<Purificateur> it = listePurificateurs.begin(); it != listePurificateurs.end(); ++it)
-    // {
-    //     if (it->id == idPurificateur)
-    //     {
-    //         purificateurRecupere = *it;
-    //         return purificateurRecupere;
-    //     }
-    // }
+    for(vector<Purificateur>::iterator it = listePurificateurs.begin(); it != listePurificateurs.end(); ++it)
+    {
+        if (it->id == idPurificateur)
+        {
+            purificateurRecupere = *it;
+            return purificateurRecupere;
+        }
+    }
     return purificateurRecupere;
 }
 

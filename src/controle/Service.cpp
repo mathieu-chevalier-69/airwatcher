@@ -75,12 +75,18 @@ Mesure Service::obtenirStatsCapteur(Capteur capteur, Date dateDebut, Date dateFi
     return mesureMoyenne / nombreDeMesure;
 }
 
-// pair<Mesure, Mesure> consulterImpactPurificateur(string idPurificateur)
-// {
-//     Purificateur purificateurRecupere = donnees.donneesPurificateur.obtenirPurificateurParId(idPurificateur);
-//     Date debutMoins7 = 
-//     Date debutMoins1 = 
-//     Date finPlus1 = 
-//     Date finPlus7 =
+pair<Mesure, Mesure> Service::consulterImpactPurificateur(string idPurificateur)
+{
+    Purificateur purificateurRecupere = donnees.donneesPurificateurs.obtenirPurificateurParId(idPurificateur);
+    Date debutMoins7 = purificateurRecupere.startTime - 7;
+    Date debutMoins1 = purificateurRecupere.startTime - 1;
+    Date finPlus1 = purificateurRecupere.stopTime - 7;
+    Date finPlus7 = purificateurRecupere.stopTime - 1;
 
-// }
+    int rayon = Saisie::saisirInt("Veuillez saisir un rayon pour votre zone d'interet");
+    Mesure avant = (*this).voirStatsZone(purificateurRecupere.coordonnees, rayon, debutMoins7, debutMoins1);
+    Mesure apres = (*this).voirStatsZone(purificateurRecupere.coordonnees, rayon, finPlus1, finPlus7);
+
+    pair<Mesure, Mesure> resultats = make_pair(avant, apres);
+    return resultats;
+}
