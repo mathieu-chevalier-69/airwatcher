@@ -2,7 +2,7 @@
 #include "../modele/Capteur.h"
 #include "../modele/Mesure.h"
 #include "../modele/Donnees.h"
-
+#include "../controle/Service.h"
 #include <iostream>
 
 int main()
@@ -40,5 +40,10 @@ int main()
     Coordonnees c1(45.3333f,1.333f);
     Coordonnees c2(46.66f,3.66f);
     cout << Coordonnees::distance(c1,c2) << endl;*/
+
+    Service service; 
+    Date debut(27,12,2019);
+    Date fin(31,12,2019);
+    cout << "Moyenne :"<<service.obtenirStatsCapteur(donnees.donneesCapteurs.listeCapteurs[0], debut, fin) << endl;
     return 0;
 }

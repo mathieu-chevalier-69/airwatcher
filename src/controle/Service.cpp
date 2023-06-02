@@ -46,6 +46,7 @@ int Service::calculAtmo(Mesure mesure)
     int indiceSO2 = (int)(mesure.concentrationSO2 / 10);
     int indiceNO2 = (int)(mesure.concentrationNO2 / 10);
     int indicePM10 = (int)(mesure.concentrationPM10 / 10);
+
     //Récupération du maximum
     int maximum = -1;
     if(maximum < indiceO3) maximum = indiceO3;
@@ -63,7 +64,7 @@ Mesure Service::obtenirStatsCapteur(Capteur capteur, Date dateDebut, Date dateFi
     for (auto it = capteur.mesures.begin(); it != capteur.mesures.end(); ++it)
     {
         Date date = it->first;
-        if (date < dateFin && !(date < dateDebut))
+        if ((date < dateFin || date == dateFin) && !(date < dateDebut))
         {
             Mesure mesure = it->second;
             mesureMoyenne += mesure;
