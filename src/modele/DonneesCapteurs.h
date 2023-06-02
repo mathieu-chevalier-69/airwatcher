@@ -1,8 +1,8 @@
 #if ! defined ( DonneesCapteurs_H )
 #define DonneesCapteurs_H
 
-#include"Capteur.h"
-#include<vector>
+#include "Capteur.h"
+#include <vector>
 
 typedef vector<Capteur> ListeCapteurs;
 typedef vector<Mesure> ListeMesures;

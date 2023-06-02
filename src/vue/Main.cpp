@@ -3,6 +3,7 @@
 #include "../modele/Mesure.h"
 #include "../modele/Donnees.h"
 #include "../controle/Service.h"
+#include "../test/Test.h"
 #include <iostream>
 
 int main()
