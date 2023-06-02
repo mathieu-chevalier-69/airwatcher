@@ -14,11 +14,16 @@ bool Test::testerCapteurDansZone(){
 
     Mesure mesureTemoin(10,10,10,10);
     Mesure mesureTest = service.voirStatsZone(pointCentral, rayon, dateDebut, dateFin);
+
+    
     cout << donnees.donneesCapteurs.listeCapteurs[0].mesures.cbegin()->second << endl;
     cout << "Test : voir les statistiques sur une zone" << endl;
     cout << "Resultats attendus : " << mesureTemoin << endl;
     cout << "Resultats obtenus : " << mesureTest << endl;
+
     string testValide = mesureTemoin.concentrationNO2 == mesureTest.concentrationNO2 ? "valide" : "invalide";
     cout << "Le test est donc " << testValide << endl; 
+
+
     return testValide == "valide";
 }
