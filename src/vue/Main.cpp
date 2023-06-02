@@ -25,10 +25,11 @@ int main()
     // cout << "jour : " << date1.jour << "mois : " << date1.mois << "annee : " << date1.annee << endl;
     // cout << "2 :" << mesure1.concentrationO3 << " 1 : " << mesure1.concentrationSO2 << endl;
 
-    // Service service; 
+    Service service; 
     // Date debut(27,12,2019);
     // Date fin(31,12,2019);
     // cout << "Moyenne :"<<service.obtenirStatsCapteur(service.donnees.donneesCapteurs.listeCapteurs[0], debut, fin) << endl;
-    Test::testerCapteurDansZone();
+    //Test::testerCapteurDansZone();
+    cout << service.donnees.donneesCapteurs.listeCapteurs.size() << endl;
     return 0;
 }

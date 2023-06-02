@@ -32,7 +32,7 @@ public:
 
     static vector<Capteur> importerCapteurs(string cheminDossier);
     static vector<Purificateur> importerPurificateurs(string cheminDossier);
-
+    static vector<Capteur> retirerCapteursErrones(vector<Capteur> capteurs,float margeErreur);
 protected:
 //----------------------------------------------------- Méthodes protégées
 
