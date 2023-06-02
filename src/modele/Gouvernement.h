@@ -28,8 +28,8 @@ class Gouvernement : public Utilisateur
 //----------------------------------------------------------------- PUBLIC
 
 public:
-    string id;
-    string nom;
+    std::string id;
+    std::string nom;
 //----------------------------------------------------- Méthodes publiques
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :
@@ -49,7 +49,7 @@ public:
     // Contrat :
     //
 
-    Gouvernement (string email, string motDePasse, string identifiant, string n );
+    Gouvernement (std::string email, std::string motDePasse, std::string identifiant, std::string n );
    
     
     // Mode d'emploi :

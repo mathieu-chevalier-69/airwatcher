@@ -21,7 +21,7 @@ public:
     virtual ~Coordonnees ( );
 
     //Surcharge d'opérateur
-    friend ostream& operator<<(ostream& os, const Coordonnees& coordonnees);
+    friend std::ostream& operator<<(std::ostream& os, const Coordonnees& coordonnees);
 
     //Méthodes membre de la classe
     bool dansLeCercle(Coordonnees centreCercle, float rayon);

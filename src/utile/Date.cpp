@@ -1,6 +1,6 @@
 #include "Date.h"
 #include <iostream>
-
+using namespace std;
 Date::Date()
     : jour(1), mois(1), annee(2000)
 {
@@ -27,7 +27,6 @@ Date::Date(string dateTimeString)
 
 bool Date::operator<(const Date &autreDate) const
 {
-    bool vrai;
     if (this->annee != autreDate.annee)
     {
         return this->annee < (autreDate.annee) ? true : false;

@@ -2,7 +2,6 @@
 #define Service_H
 
 
-using namespace std;
 #include<iostream>
 
 #include "../modele/Donnees.h"
@@ -22,9 +21,9 @@ class Service{
         //Methodes de la classe 
         Mesure voirStatsZone(const Coordonnees & pointCentral,const float & rayon,const Date & dateDebut,const Date & dateFin);
 
-        pair<Mesure, Mesure> consulterImpactPurificateur(string idPurificateur);
+        pair<Mesure, Mesure> consulterImpactPurificateur(std::string idPurificateur);
 
-        vector<Capteur> voirCapteursStatsSimilaires(string idCapteur);
+        std::vector<Capteur> voirCapteursStatsSimilaires(std::string idCapteur);
 
         Mesure voirStatsSurUnPoint(Coordonnees point); 
         Mesure obtenirStatsCapteur(Capteur capteur, Date dateDebut, Date dateFin);

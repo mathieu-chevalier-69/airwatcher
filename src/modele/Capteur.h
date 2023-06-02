@@ -2,7 +2,6 @@
 #define Capteur_H
 
 // Inclusions des autres fichiers d'en-tête si nécessaire
-using namespace std;
 #include<string>
 #include<map>
 #include<utility>
@@ -16,18 +15,18 @@ typedef map<Date,Mesure> MapMesures;
 class Capteur {
     public : 
 
-        string id; 
+        std::string id; 
         Coordonnees coordonees;
         MapMesures mesures;
-        string proprietaire;
+        std::string proprietaire;
 
-        Capteur(const string & id, const float & longitude, const float & latitude, const string & proprietaire)
+        Capteur(const std::string & id, const float & longitude, const float & latitude, const std::string & proprietaire)
         : id(id), coordonees(latitude, longitude), proprietaire(proprietaire){};
         virtual ~Capteur();   
 
         void ajouterMesure(const Mesure & mesure, const Date & date);
         
-        friend ostream& operator<<(ostream& os, const Capteur& capteur);
+        friend std::ostream& operator<<(std::ostream& os, const Capteur& capteur);
 
     protected : 
     
