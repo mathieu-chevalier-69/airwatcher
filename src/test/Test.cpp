@@ -18,5 +18,7 @@ bool Test::testerCapteurDansZone(){
     cout << "Test : voir les statistiques sur une zone" << endl;
     cout << "Resultats attendus : " << mesureTemoin << endl;
     cout << "Resultats obtenus : " << mesureTest << endl;
-
+    bool testValide = mesureTemoin.concentrationNO2 == mesureTest.concentrationNO2 ? true : false;
+    cout << "Le test est donc " << testValide << endl; 
+    return testValide;
 }

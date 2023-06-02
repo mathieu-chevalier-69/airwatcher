@@ -30,7 +30,7 @@ class FluxImport
 
 public:
 
-    static vector<Capteur> importerCapteurs();
+    static vector<Capteur> importerCapteurs(string cheminDossier);
     static vector<Purificateur> importerPurificateurs();
 
 protected:

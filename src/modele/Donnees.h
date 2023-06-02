@@ -20,7 +20,8 @@ class Donnees{
         DonneesPurificateurs donneesPurificateurs;
         
         //Constructeur - Destructeur
-        Donnees();
+        Donnees(){};
+        Donnees(string cheminDossier);
         ~Donnees();
 };
 

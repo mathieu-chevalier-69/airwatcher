@@ -8,10 +8,11 @@
 using namespace std;
 
 
-vector<Capteur> FluxImport::importerCapteurs()
+vector<Capteur> FluxImport::importerCapteurs(string cheminDossier)
 {
     //Chargement des capteurs et affectation de base au gouvernement
-    vector<vector<string>> donnees = LecteurCsv::lireCsv("./dataset/sensors.csv");
+    string cheminFichierCapteur = cheminDossier + "sensors.csv";
+    vector<vector<string>> donnees = LecteurCsv::lireCsv(cheminFichierCapteur);
 
     vector<vector<string>>::const_iterator iterateur;
     vector<Capteur> capteurs;
@@ -22,7 +23,8 @@ vector<Capteur> FluxImport::importerCapteurs()
         capteurs.push_back(capteur);
     }
     //Affectation des capteurs privés aux utilisateurs
-    donnees = LecteurCsv::lireCsv("./dataset/users.csv");
+    string cheminFichierUtilisateur = cheminDossier + "users.csv";
+    donnees = LecteurCsv::lireCsv(cheminFichierUtilisateur);
     for(iterateur = donnees.begin(); iterateur < donnees.end(); iterateur++)
     {
         vector<Capteur>::iterator capteur;
