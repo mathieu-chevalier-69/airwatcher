@@ -44,6 +44,7 @@ int main()
         Date dateDebut, dateFin;
         int rayon;
         string idPurificateur;
+        pair<Mesure, Mesure> mesures;
         switch(choix)
         {
             case 1:
@@ -58,7 +59,10 @@ int main()
                 break;
             case 3:
                 idPurificateur = Saisie::saisirString("Saisissez l'identifiant du purificateur");
-                //pair<Mesure, Mesure> mesures = service.consulterImpactPurificateur(idPurificateur);
+                mesures = service.consulterImpactPurificateur(idPurificateur);
+                cout << "Valeurs sur 7 jours avant l'activation du purificateur :" << endl << mesures.first << endl;
+                cout << "Valeurs sur les 7 jours avant la désactivation du purificateur :" << endl << mesures.second << endl;
+
                 break;
         }
     }while(choix != 0);
