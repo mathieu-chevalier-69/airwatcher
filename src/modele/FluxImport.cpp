@@ -8,10 +8,10 @@
 using namespace std;
 
 
-vector<Capteur> FluxImport::importerCapteurs(string directory)
+vector<Capteur> FluxImport::importerCapteurs(string cheminDossier)
 {
     //Chargement des capteurs et affectation de base au gouvernement
-    vector<vector<string>> donnees = LecteurCsv::lireCsv(directory+"sensors.csv");
+    vector<vector<string>> donnees = LecteurCsv::lireCsv(cheminDossier+"sensors.csv");
 
     vector<vector<string>>::const_iterator iterateur;
     vector<Capteur> capteurs;
@@ -22,7 +22,7 @@ vector<Capteur> FluxImport::importerCapteurs(string directory)
         capteurs.push_back(capteur);
     }
     //Affectation des capteurs privés aux utilisateurs
-    donnees = LecteurCsv::lireCsv(directory+"users.csv");
+    donnees = LecteurCsv::lireCsv(cheminDossier+"users.csv");
     for(iterateur = donnees.begin(); iterateur < donnees.end(); iterateur++)
     {
         vector<Capteur>::iterator capteur;
@@ -35,7 +35,7 @@ vector<Capteur> FluxImport::importerCapteurs(string directory)
     }
 
     //Chargement des mesures
-    donnees = LecteurCsv::lireCsv(directory+"measurements.csv");
+    donnees = LecteurCsv::lireCsv(cheminDossier+"measurements.csv");
     map<string, map<Date, Mesure>> mesures;
     for(iterateur = donnees.begin(); iterateur < donnees.end(); iterateur++)
     {
@@ -77,9 +77,9 @@ vector<Capteur> FluxImport::importerCapteurs(string directory)
     return capteurs;
 }
 
-vector<Purificateur> FluxImport::importerPurificateurs(string directory)
+vector<Purificateur> FluxImport::importerPurificateurs(string cheminDossier)
 {
-    vector<vector<string>> donnees = LecteurCsv::lireCsv(directory+"cleaners.csv");
+    vector<vector<string>> donnees = LecteurCsv::lireCsv(cheminDossier+"cleaners.csv");
     vector<vector<string>>::const_iterator iterateur;
     vector<Purificateur> purificateurs;
 
@@ -88,7 +88,7 @@ vector<Purificateur> FluxImport::importerPurificateurs(string directory)
         Purificateur purificateur((*iterateur)[0], Coordonnees(stof((*iterateur)[1]),stof((*iterateur)[2])), Date((*iterateur)[3]),Date((*iterateur)[4]), "");
         purificateurs.push_back(purificateur);
     }
-    donnees = LecteurCsv::lireCsv(directory+"providers.csv");
+    donnees = LecteurCsv::lireCsv(cheminDossier+"providers.csv");
 
     for(iterateur = donnees.begin(); iterateur < donnees.end(); iterateur++)
     {

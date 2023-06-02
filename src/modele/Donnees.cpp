@@ -2,14 +2,14 @@
 #include <time.h>
 #include<string>
 
-Donnees::Donnees(string directory)
+Donnees::Donnees(string cheminDossier)
 {
     FluxImport flux;
     clock_t t = clock();
-    donneesCapteurs.listeCapteurs = flux.importerCapteurs(directory);
+    donneesCapteurs.listeCapteurs = flux.importerCapteurs(cheminDossier);
     clock_t apresCapteurs = clock();
     /*donneesUtilisateurs.listeUtilisateurs = flux.importerUtilisateur();*/
-    donneesPurificateurs.listePurificateurs = flux.importerPurificateurs(directory);
+    donneesPurificateurs.listePurificateurs = flux.importerPurificateurs(cheminDossier);
     clock_t apresPurificateurs = clock();
 
     cout << "Importation des capteurs en " << ((double) (apresCapteurs - t)) / CLOCKS_PER_SEC << "ms"<< endl;
@@ -19,13 +19,13 @@ Donnees::Donnees(string directory)
 
 Donnees::Donnees()
 {
-    string directory = "./dataset";
+    string cheminDossier = "./dataset/";
     FluxImport flux;
     clock_t t = clock();
-    donneesCapteurs.listeCapteurs = flux.importerCapteurs(directory);
+    donneesCapteurs.listeCapteurs = flux.importerCapteurs(cheminDossier);
     clock_t apresCapteurs = clock();
     /*donneesUtilisateurs.listeUtilisateurs = flux.importerUtilisateur();*/
-    donneesPurificateurs.listePurificateurs = flux.importerPurificateurs(directory);
+    donneesPurificateurs.listePurificateurs = flux.importerPurificateurs(cheminDossier);
     clock_t apresPurificateurs = clock();
 
     cout << "Importation des capteurs en " << ((double) (apresCapteurs - t)) / CLOCKS_PER_SEC << "ms"<< endl;
