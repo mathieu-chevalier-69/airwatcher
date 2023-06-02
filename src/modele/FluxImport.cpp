@@ -37,7 +37,8 @@ vector<Capteur> FluxImport::importerCapteurs(string cheminDossier)
     }
 
     //Chargement des mesures
-    donnees = LecteurCsv::lireCsv("./dataset/measurements.csv");
+    string cheminFichierMesures = cheminDossier + "measurements.csv";
+    donnees = LecteurCsv::lireCsv(cheminFichierMesures);
     map<string, map<Date, Mesure>> mesures;
     for(iterateur = donnees.begin(); iterateur < donnees.end(); iterateur++)
     {

@@ -3,6 +3,7 @@
 #include "../modele/Mesure.h"
 #include "../modele/Donnees.h"
 #include "../controle/Service.h"
+#include "../test/Test.h"
 #include <iostream>
 
 int main()
@@ -24,9 +25,10 @@ int main()
     // cout << "jour : " << date1.jour << "mois : " << date1.mois << "annee : " << date1.annee << endl;
     // cout << "2 :" << mesure1.concentrationO3 << " 1 : " << mesure1.concentrationSO2 << endl;
 
-    Service service; 
-    Date debut(27,12,2019);
-    Date fin(31,12,2019);
-    cout << "Moyenne :"<<service.obtenirStatsCapteur(service.donnees.donneesCapteurs.listeCapteurs[0], debut, fin) << endl;
+    // Service service; 
+    // Date debut(27,12,2019);
+    // Date fin(31,12,2019);
+    // cout << "Moyenne :"<<service.obtenirStatsCapteur(service.donnees.donneesCapteurs.listeCapteurs[0], debut, fin) << endl;
+    Test::testerCapteurDansZone();
     return 0;
 }
