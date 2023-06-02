@@ -12,6 +12,7 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include "Capteur.h"
+#include "Purificateur.h"
 #include <vector>
 //------------------------------------------------------------- Constantes
 
@@ -30,6 +31,7 @@ class FluxImport
 public:
 
     static vector<Capteur> importerCapteurs();
+    static vector<Purificateur> importerPurificateurs();
 
 protected:
 //----------------------------------------------------- Méthodes protégées

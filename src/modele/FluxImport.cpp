@@ -1,6 +1,7 @@
 #include "FluxImport.h"
 #include "../utile/LecteurCsv.h"
 #include "Capteur.h"
+#include "Entreprise.h"
 #include <vector>
 #include <iostream>
 
@@ -74,4 +75,32 @@ vector<Capteur> FluxImport::importerCapteurs()
     }
 
     return capteurs;
+}
+
+vector<Purificateur> FluxImport::importerPurificateurs()
+{
+    vector<vector<string>> donnees = LecteurCsv::lireCsv("./dataset/cleaners.csv");
+    vector<vector<string>>::const_iterator iterateur;
+    vector<Purificateur> purificateurs;
+
+    for(iterateur = donnees.begin(); iterateur < donnees.end(); iterateur++)
+    {
+        Purificateur purificateur((*iterateur)[0], Coordonnees(stof((*iterateur)[1]),stof((*iterateur)[2])), Date((*iterateur)[3]),Date((*iterateur)[4]), "");
+        purificateurs.push_back(purificateur);
+    }
+    donnees = LecteurCsv::lireCsv("./dataset/providers.csv");
+
+    for(iterateur = donnees.begin(); iterateur < donnees.end(); iterateur++)
+    {
+        vector<Purificateur>::iterator purificateur;
+        for(purificateur = purificateurs.begin(); purificateur < purificateurs.end(); purificateur++)
+        {
+            if((*iterateur)[1] == (purificateur->id))
+                purificateur->entrepriseId = (*iterateur)[0];
+            break;
+        }
+    }
+
+
+    return purificateurs;
 }

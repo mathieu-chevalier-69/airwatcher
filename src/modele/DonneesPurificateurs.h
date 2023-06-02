@@ -11,7 +11,7 @@
 #define DonneesPurificateurs_H
 
 //--------------------------------------------------- Interfaces utilisées
-
+#include "Purificateur.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -21,31 +21,16 @@
 //
 //
 //------------------------------------------------------------------------
-
+typedef vector<Purificateur> ListePurificateur;
 class DonneesPurificateurs 
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
+    ListePurificateur listePurificateurs;
 //----------------------------------------------------- Méthodes publiques
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-
-//------------------------------------------------- Surcharge d'opérateurs
-    DonneesPurificateurs & operator = ( const DonneesPurificateurs & unDonneesPurificateurs );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-
-//-------------------------------------------- Constructeurs - destructeur
-    DonneesPurificateurs( const DonneesPurificateurs& unDonneesPurificateurs);
-    // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
