@@ -29,6 +29,8 @@ all: directories $(EXECUTABLE)
 directories:
 	$(MKDIR_P) $(OBJDIR)
 	$(MKDIR_P) $(BINDIR)
+	rm -rf bin/dataset
+	cp -r -n dataset bin/dataset
 
 # Règle pour l'exécutable
 $(EXECUTABLE): $(OBJECTS)
