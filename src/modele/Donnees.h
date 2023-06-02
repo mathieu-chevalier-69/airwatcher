@@ -21,6 +21,7 @@ class Donnees{
         
         //Constructeur - Destructeur
         Donnees(string directory);
+        Donnees();
         ~Donnees();
 };
 
