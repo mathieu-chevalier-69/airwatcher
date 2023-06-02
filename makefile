@@ -42,6 +42,3 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 # Nettoyage des fichiers objets et de l'exécutable
 clean:
 	rm -rf $(OBJDIR) $(BINDIR)
-
-# Règle .PHONY pour indiquer les cibles qui ne sont pas des fichiers
-.PHONY: all clean directories
