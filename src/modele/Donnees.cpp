@@ -7,8 +7,6 @@ Donnees::Donnees()
     donneesCapteurs.listeCapteurs = flux.importerCapteurs();
     /*donneesUtilisateurs.listeUtilisateurs = flux.importerUtilisateur();*/
     donneesPurificateurs.listePurificateurs = flux.importerPurificateurs();
-        cout << "t" << endl;
-
 }
 
 Donnees::~Donnees()
