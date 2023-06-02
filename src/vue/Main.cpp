@@ -26,7 +26,7 @@ int main()
 
 
     Donnees donnees;
-    cout << donnees.donneesCapteurs.listeCapteurs.size() << endl;
+/*    cout << donnees.donneesCapteurs.listeCapteurs.size() << endl;
 
     for (map<Date, Mesure>::const_iterator it = donnees.donneesCapteurs.listeCapteurs[0].mesures.begin();
     it != donnees.donneesCapteurs.listeCapteurs[0].mesures.end(); ++it)
@@ -36,9 +36,13 @@ int main()
 
     cout << donnees.donneesCapteurs.capteurDansZone(Coordonnees(45.3333,1.3333), 200).size() << endl;
 
+*/
+    cout << donnees.donneesPurificateurs.listePurificateurs.size() << endl;
+
    /*
     Coordonnees c1(45.3333f,1.333f);
     Coordonnees c2(46.66f,3.66f);
     cout << Coordonnees::distance(c1,c2) << endl;*/
+
     return 0;
 }

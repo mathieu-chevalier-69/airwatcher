@@ -35,22 +35,6 @@ public:
     // Contrat :
     //
 
-
-//------------------------------------------------- Surcharge d'opérateurs
-    DonneesPurificateurs & operator = ( const DonneesPurificateurs & unDonneesPurificateurs );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-
-//-------------------------------------------- Constructeurs - destructeur
-    DonneesPurificateurs( const DonneesPurificateurs& unDonneesPurificateurs);
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-
     DonneesPurificateurs( );
     // Mode d'emploi :
     //

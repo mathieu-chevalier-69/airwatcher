@@ -21,32 +21,6 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC
 
-//----------------------------------------------------- Méthodes publiques
-// type DonneesPurificateurs::Méthode ( liste des paramètres )
-// Algorithme :
-//
-//{
-//} //----- Fin de Méthode
-
-
-//------------------------------------------------- Surcharge d'opérateurs
-DonneesPurificateurs & DonneesPurificateurs::operator = ( const DonneesPurificateurs & unDonneesPurificateurs )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
-
-//-------------------------------------------- Constructeurs - destructeur
-DonneesPurificateurs::DonneesPurificateurs ( const DonneesPurificateurs & unDonneesPurificateurs )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <DonneesPurificateurs>" << endl;
-#endif
-} //----- Fin de DonneesPurificateurs (constructeur de copie)
-
 
 DonneesPurificateurs::DonneesPurificateurs ( )
 // Algorithme :
