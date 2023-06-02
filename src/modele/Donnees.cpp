@@ -1,7 +1,3 @@
-#include <iostream>
-#include "FluxImport.h"
-using namespace std;
-
 #include "Donnees.h"
 
 
