@@ -55,6 +55,7 @@ public:
     //
     // Contrat :
     //
+    Purificateur obtenirPurificateurParId(string idPurificateur);
 
     virtual ~DonneesPurificateurs( );
     // Mode d'emploi :

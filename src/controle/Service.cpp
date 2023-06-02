@@ -73,3 +73,13 @@ Mesure Service::obtenirStatsCapteur(Capteur capteur, Date dateDebut, Date dateFi
 
     return mesureMoyenne / nombreDeMesure;
 }
+
+pair<Mesure, Mesure> consulterImpactPurificateur(string idPurificateur)
+{
+    Purificateur purificateurRecupere = donnees.donneesPurificateur.obtenirPurificateurParId(idPurificateur);
+    Date debutMoins7 = 
+    Date debutMoins1 = 
+    Date finPlus1 = 
+    Date finPlus7 =
+
+}

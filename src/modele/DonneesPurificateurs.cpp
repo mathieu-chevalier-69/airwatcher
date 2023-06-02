@@ -58,6 +58,19 @@ DonneesPurificateurs::DonneesPurificateurs ( )
 } //----- Fin de DonneesPurificateurs
 
 
+Purificateur DonneesPurificateurs::obtenirPurificateurParId(string idPurificateur)
+{
+    
+    Purificateur purificateurRecupere;
+    for()
+    {
+
+    }
+    return purificateurRecupere;
+}
+
+
+
 DonneesPurificateurs::~DonneesPurificateurs ( )
 // Algorithme :
 //
