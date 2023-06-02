@@ -15,7 +15,7 @@ class Test{
 
         //Méthodes de test
         static bool testerCapteurDansZone();
-        static bool testerMesurerEfficacitéPurificateur();
+        static bool testerMesurerEfficacitePurificateur();
 };
 
 #endif
