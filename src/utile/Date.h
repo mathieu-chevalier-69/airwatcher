@@ -25,8 +25,10 @@ class Date {
         friend ostream& operator <<(ostream & os, const Date date);
         bool operator<(const Date& autreDate) const;
         bool operator==(const Date& autreDate) const;
-
-
+        Date operator-(int jours)const;
+        bool estAnneeBissextile(int annee)const;
+        int getJoursDansMois(int mois, int annee)const;
+    
 };
 
 

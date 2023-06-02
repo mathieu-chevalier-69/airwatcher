@@ -5,7 +5,8 @@
 using namespace std;
 #include<iostream>
 
-#include"../modele/Donnees.h"
+#include "../modele/Donnees.h"
+#include "../utile/Saisie.h"
 
 class Service{
 
@@ -28,7 +29,7 @@ class Service{
         Mesure voirStatsSurUnPoint(Coordonnees point); 
         Mesure obtenirStatsCapteur(Capteur capteur, Date dateDebut, Date dateFin);
         int calculAtmo(Mesure); 
-        
+
 
 };
 

@@ -36,7 +36,7 @@ Purificateur DonneesPurificateurs::obtenirPurificateurParId(string idPurificateu
 {
     
     Purificateur purificateurRecupere;
-    for(iterator<Purificateur> it = listePurificateurs.begin(); it != listePurificateurs.end(); ++it)
+    for(vector<Purificateur>::iterator it = listePurificateurs.begin(); it != listePurificateurs.end(); ++it)
     {
         if (it->id == idPurificateur)
         {

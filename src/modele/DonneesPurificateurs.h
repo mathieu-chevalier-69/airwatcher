@@ -11,7 +11,9 @@
 #define DonneesPurificateurs_H
 
 //--------------------------------------------------- Interfaces utilisées
+#include <vector>
 #include "Purificateur.h"
+
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types

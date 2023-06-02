@@ -25,8 +25,7 @@ int main()
     // cout << "2 :" << mesure1.concentrationO3 << " 1 : " << mesure1.concentrationSO2 << endl;
 
     Service service; 
-    Date debut(27,12,2019);
-    Date fin(31,12,2019);
-    cout << "Moyenne :"<<service.obtenirStatsCapteur(service.donnees.donneesCapteurs.listeCapteurs[0], debut, fin) << endl;
+    pair<Mesure,Mesure> p = service.consulterImpactPurificateur("Cleaner1");
+    cout << "Avant :\n" << p.first << endl << "Apres :\n" << p.second << endl;
     return 0;
 }
