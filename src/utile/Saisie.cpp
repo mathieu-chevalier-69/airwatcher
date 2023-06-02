@@ -62,7 +62,14 @@ int Saisie::saisirInt(string message)
     return nombre;
 }
 
-
+string Saisie::saisirString(string message)
+{
+    cout << message << endl;
+    string value;
+    cin >> value;
+    cin.clear();
+    return value;
+}
 Coordonnees Saisie::saisirCoordonnees(string message)
 {
     cout << message << endl;

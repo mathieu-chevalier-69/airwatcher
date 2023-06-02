@@ -16,6 +16,7 @@ class Saisie{
         static Date saisirDate(string);
         static int saisirInt(string);
         static Coordonnees saisirCoordonnees(string);
+        static string saisirString(string);
 };
 
 #endif

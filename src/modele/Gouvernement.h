@@ -28,9 +28,8 @@ class Gouvernement : public Utilisateur
 //----------------------------------------------------------------- PUBLIC
 
 public:
-
-string id;
-string nom;
+    string id;
+    string nom;
 //----------------------------------------------------- Méthodes publiques
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :

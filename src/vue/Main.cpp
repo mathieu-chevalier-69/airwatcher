@@ -4,7 +4,10 @@
 #include "../modele/Donnees.h"
 #include "../controle/Service.h"
 #include "../test/Test.h"
+#include "../utile/Saisie.h"
 #include <iostream>
+#include <string>
+
 
 int main()
 {
@@ -31,5 +34,35 @@ int main()
     // cout << "Moyenne :"<<service.obtenirStatsCapteur(service.donnees.donneesCapteurs.listeCapteurs[0], debut, fin) << endl;
     //Test::testerCapteurDansZone();
     cout << service.donnees.donneesCapteurs.listeCapteurs.size() << endl;
+    int choix = 0;
+    do{
+        cout << "0. Quitter" << endl;
+        cout << "1. Exécuter tous les tests" << endl;
+        cout << "2. Calculer qualité de l'air sur une zone donnée" << endl;
+        cout << "3. Consulter l'impact d'un purificateur" << endl;
+        choix = Saisie::saisirInt("Choisissez une option");
+        Coordonnees coordonnees;
+        Date dateDebut, dateFin;
+        int rayon;
+        string idPurificateur;
+        switch(choix)
+        {
+            case 1:
+                cout << "Exécution des tests" << endl;
+                break;
+            case 2:
+                coordonnees = Saisie::saisirCoordonnees("Saisissez les coordonnées du point central");
+                rayon = Saisie::saisirInt("Saisissez le rayon (km)");
+                dateDebut = Saisie::saisirDate("Saisissez la date de début");
+                dateFin = Saisie::saisirDate("Saisissez la date de fin");
+                service.voirStatsZone(coordonnees, rayon, dateDebut, dateFin);
+                break;
+            case 3:
+                idPurificateur = Saisie::saisirString("Saisissez l'identifiant du purificateur");
+                //pair<Mesure, Mesure> mesures = service.consulterImpactPurificateur(idPurificateur);
+                break;
+        }
+    }while(choix != 0);
+
     return 0;
 }
