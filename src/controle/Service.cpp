@@ -14,23 +14,26 @@ Mesure Service::voirStatsZone(const Coordonnees &pointCentral, const float &rayo
         }
     }
 
-    
     // Variables de stockage des concentrations
-    Mesure mesureMoyenne(-1,-1,-1,-1);
+    Mesure mesureMoyenne(0,0,0,0);
     int nombreMesures = 0;
-    
+
     /*
     Pour chaque capteur dans la zone, on utilise la méthode obtenirStatsCapteur
     Cela nous retourne la mesureMoyenne de ce capteur sur la durée
     */
     for (Capteur capteur : capteursDansZone)
     {
-        mesureMoyenne += obtenirStatsCapteur(capteur,dateDebut,dateFin);
-        nombreMesures++;
+        Mesure m = obtenirStatsCapteur(capteur, dateDebut, dateFin);
+        if (m.concentrationNO2 != -1)
+        {
+            mesureMoyenne += m;
+            nombreMesures++;
+        }
     }
 
-    // Calcul de la moyenne des concentration et renvoi de la mesure moyenne  
-    return nombreMesures > 0 ? mesureMoyenne/nombreMesures : mesureMoyenne;
+    // Calcul de la moyenne des concentration et renvoi de la mesure moyenne
+    return nombreMesures > 0 ? mesureMoyenne / nombreMesures : Mesure(-1,-1,-1,-1);
 }
 
 int Service::calculAtmo(Mesure mesure)
@@ -48,12 +51,16 @@ int Service::calculAtmo(Mesure mesure)
     int indiceNO2 = (int)(mesure.concentrationNO2 / 10);
     int indicePM10 = (int)(mesure.concentrationPM10 / 10);
 
-    //Récupération du maximum
+    // Récupération du maximum
     int maximum = -1;
-    if(maximum < indiceO3) maximum = indiceO3;
-    if(maximum < indiceNO2) maximum = indiceNO2;
-    if(maximum < indicePM10) maximum = indicePM10;
-    if(maximum < indiceSO2) maximum = indiceSO2;
+    if (maximum < indiceO3)
+        maximum = indiceO3;
+    if (maximum < indiceNO2)
+        maximum = indiceNO2;
+    if (maximum < indicePM10)
+        maximum = indicePM10;
+    if (maximum < indiceSO2)
+        maximum = indiceSO2;
     return maximum;
 }
 
@@ -73,7 +80,7 @@ Mesure Service::obtenirStatsCapteur(Capteur capteur, Date dateDebut, Date dateFi
         }
     }
 
-    return mesureMoyenne / nombreDeMesure;
+    return nombreDeMesure == 0 ? Mesure(-1, -1, -1, -1) : mesureMoyenne / nombreDeMesure;
 }
 
 pair<Mesure, Mesure> Service::consulterImpactPurificateur(string idPurificateur)
