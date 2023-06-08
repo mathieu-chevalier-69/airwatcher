@@ -40,7 +40,7 @@ DonneesCapteurs::DonneesCapteurs ( )
 ListeCapteurs DonneesCapteurs::capteurDansZone(const Coordonnees & centre, const float & rayon)
 {
     ListeCapteurs resultats;
-    for(int i = 0; i < listeCapteurs.size(); i++)
+    for(long unsigned int i = 0; i < listeCapteurs.size(); i++)
     {
         if (listeCapteurs[i].coordonees.dansLeCercle(centre, rayon))
         {
