@@ -28,7 +28,8 @@ vector<Capteur> FluxImport::importerCapteurs(string cheminDossier)
         vector<Capteur>::iterator capteur;
         for (capteur = capteurs.begin(); capteur < capteurs.end(); capteur++)
         {
-            if ((*iterateur)[1] == (capteur->id)){
+            if ((*iterateur)[1] == (capteur->id))
+            {
                 capteur->proprietaire = (*iterateur)[0];
                 break;
             }
@@ -77,54 +78,72 @@ vector<Capteur> FluxImport::importerCapteurs(string cheminDossier)
     return capteurs;
 }
 
-vector<Capteur> FluxImport::retirerCapteursErrones(vector<Capteur> capteurs, float margeErreur)
+void FluxImport::retirerCapteursErrones(vector<Capteur> & capteurs, float margeErreur)
 {
-    Mesure moyenne;
-    int nbMesures = 0;
     vector<Capteur>::iterator capteur;
-    for (capteur = capteurs.begin(); capteur < capteurs.end(); capteur++)
-    {
-        MapMesures::iterator mesure;
-        if (capteur->proprietaire == "gouvernement")
-            for (mesure = capteur->mesures.begin(); mesure != capteur->mesures.end(); mesure++)
-            {
-                moyenne.concentrationO3 += mesure->second.concentrationO3;
-                moyenne.concentrationNO2 += mesure->second.concentrationNO2;
-                moyenne.concentrationPM10 += mesure->second.concentrationPM10;
-                moyenne.concentrationSO2 += mesure->second.concentrationSO2;
-                nbMesures++;
-            }
-    }
-    moyenne.concentrationO3 /= nbMesures;
-    moyenne.concentrationNO2 /= nbMesures;
-    moyenne.concentrationPM10 /= nbMesures;
-    moyenne.concentrationSO2 /= nbMesures;
 
     for (capteur = capteurs.begin(); capteur < capteurs.end(); capteur++)
     {
-        MapMesures::iterator mesure;
         if (capteur->proprietaire != "gouvernement")
-            for (mesure = capteur->mesures.begin(); mesure != capteur->mesures.end(); mesure++)
+        {
+            Mesure moyenne;
+            // C'est un capteur privé -> on le vérifie
+
+            MapMesures::iterator mesure;
+            int nbMesures = 0;
+            int nbEchec = 0;
+            for (Capteur capteurGouvernement : capteurs)
             {
-                if(abs(mesure->second.concentrationO3 - moyenne.concentrationO3) > margeErreur)
+                // On fait la moyenne des mesures des capteurs gouvernementaux dans un rayon de 150km autour
+                if (capteurGouvernement.proprietaire == "gouvernement")
                 {
-                    capteurs.erase(capteur);
-                }
-                else if(abs(mesure->second.concentrationNO2 - moyenne.concentrationNO2) > margeErreur)
-                {
-                    capteurs.erase(capteur);
-                }
-                else if(abs(mesure->second.concentrationPM10 - moyenne.concentrationPM10) > margeErreur)
-                {
-                    capteurs.erase(capteur);
-                }
-                else if(abs(mesure->second.concentrationSO2 - moyenne.concentrationSO2) > margeErreur)
-                {
-                    capteurs.erase(capteur);
+                    if (capteurGouvernement.coordonees.dansLeCercle(capteur->coordonees, 150))
+                    {
+                        for (mesure = capteurGouvernement.mesures.begin(); mesure != capteurGouvernement.mesures.end(); mesure++)
+                        {
+
+                            moyenne.concentrationO3 += mesure->second.concentrationO3;
+                            moyenne.concentrationNO2 += mesure->second.concentrationNO2;
+                            moyenne.concentrationPM10 += mesure->second.concentrationPM10;
+                            moyenne.concentrationSO2 += mesure->second.concentrationSO2;
+                            nbMesures++;
+                        }
+                    }
                 }
             }
+
+            moyenne.concentrationO3 /= nbMesures;
+            moyenne.concentrationNO2 /= nbMesures;
+            moyenne.concentrationPM10 /= nbMesures;
+            moyenne.concentrationSO2 /= nbMesures;
+            for (mesure = capteur->mesures.begin(); mesure != capteur->mesures.end(); mesure++)
+            {
+                //On compte le nombre d'échecs, càd le nombre de concentrations dont la différence avec la moyenne est supérieure à la marge d'erreur
+                if (abs(mesure->second.concentrationO3 - moyenne.concentrationO3) > margeErreur)
+                {
+                    nbEchec++;
+                }
+                else if (abs(mesure->second.concentrationNO2 - moyenne.concentrationNO2) > margeErreur)
+                {
+                    nbEchec++;
+                }
+                else if (abs(mesure->second.concentrationPM10 - moyenne.concentrationPM10) > margeErreur)
+                {
+                    nbEchec++;
+                }
+                else if (abs(mesure->second.concentrationSO2 - moyenne.concentrationSO2) > margeErreur)
+                {
+                    nbEchec++;
+                }
+            }
+            if(((float)nbEchec) / capteur->mesures.size() > 0.05)
+            {
+                // Si plus de 5% des mesures du capteur dépassent la marge d'erreur, on retire le capteur
+                cout << "Le capteur "<< capteur->id << " a un taux d'échec de " << (((float)nbEchec) / capteur->mesures.size())*100 <<  "% pour une marge d'erreur de " << margeErreur <<"µg/m3 il n'a pas été importé." << endl;
+                capteurs.erase(capteur);
+            }
+        }
     }
-    return capteurs;
 }
 
 vector<Purificateur> FluxImport::importerPurificateurs(string cheminDossier)
