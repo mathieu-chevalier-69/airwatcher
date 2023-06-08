@@ -4,68 +4,7 @@ using namespace std;
 
 #include "Saisie.h"
 
-/*
-Date Saisie::saisirDate(string message)
-{
-    cout << message << endl;
 
-    int jour = -1;
-    cout << "Veuillez saisir le jour: ";
-    cin >> jour;
-    while(std::cin.fail() || (jour > 31) || (jour < 1)) 
-    {
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-        cout << "Jour invalide. Re-essayer:\n";
-        cin >> jour;
-    }   
-
-    int mois = -1;
-    cout << "Veuillez saisir le mois: ";
-    cin >> mois;
-    while(std::cin.fail() || (mois < 1) || (mois > 12)) 
-    {
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-        cout << "Mois invalide. Re-essayer:\n";
-        cin >> mois;
-    }
-
-
-    int annee = -1;
-    cout << "Veuillez saisir l'annee: ";
-    cin >> annee;
-    while(std::cin.fail() || (annee < 1)) 
-    {
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-        cout << "Annee invalide. Re-essayer:\n";
-        cin >> annee;
-    }
-
-    Date d = Date(jour,mois,annee);
-    return d;
-}
-*/
-
-
-/*
-int Saisie::saisirInt(string message)
-{
-    cout << message << endl;
-    int nombre;
-    cin >> nombre;
-    while(std::cin.fail()) 
-    {
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-        cout << "Saisie invalide. Re-essayer:\n";
-        cin >> nombre;
-    }
-
-    return nombre;
-}
-*/
 
 int Saisie::saisirInt(const std::string& message) {
         std::cout << message << std::endl;
@@ -97,32 +36,6 @@ int Saisie::saisirInt(const std::string& message) {
         return result;
     }
 
-/*
-Date Saisie::saisirDate(string message)
-{
-    int jour = -1;
-    while((jour > 31) || (jour < 1)) 
-    {
-        jour = saisirInt("Veuillez saisir le jour: ");
-    }  
-
-    int mois = -1;
-    while((mois < 1) || (mois > 12)) 
-    {
-        mois = saisirInt("Veuillez saisir le mois: ");
-    } 
-
-    int annee = -1;
-    while((annee < 1)) 
-    {
-       annee = saisirInt("Veuillez saisir l'annee: ");
-    }
-
-    Date d = Date(jour,mois,annee);
-    return d;
-
-}
-*/
 
 Date Saisie::saisirDate(const std::string& message) {
         std::cout << message << std::endl;
