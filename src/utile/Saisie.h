@@ -14,7 +14,7 @@ class Saisie{
         Saisie();
         ~Saisie();
         static Date saisirDate(string);
-        static int saisirInt(string);
+        static int saisirInt(const std::string& message);
         static Coordonnees saisirCoordonnees(string);
         static string saisirString(string);
 };
