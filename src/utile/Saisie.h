@@ -13,10 +13,10 @@ class Saisie{
     public:
         Saisie();
         ~Saisie();
-        static Date saisirDate(string);
+        static Date saisirDate(const std::string& message);
         static int saisirInt(const std::string& message);
-        static Coordonnees saisirCoordonnees(string);
-        static string saisirString(string);
+        static Coordonnees saisirCoordonnees(string message);
+        static string saisirString(string message);
 };
 
 #endif

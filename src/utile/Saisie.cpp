@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 #include "Saisie.h"
@@ -96,7 +97,7 @@ int Saisie::saisirInt(const std::string& message) {
         return result;
     }
 
-
+/*
 Date Saisie::saisirDate(string message)
 {
     int jour = -1;
@@ -120,6 +121,36 @@ Date Saisie::saisirDate(string message)
     Date d = Date(jour,mois,annee);
     return d;
 
+}
+*/
+
+Date Saisie::saisirDate(const std::string& message) {
+        std::cout << message << std::endl;
+        std::string input;
+        int jour, mois, annee;
+
+        while (true) {
+            std::getline(std::cin, input);
+
+            try {
+                std::istringstream iss(input);
+                char delimiter;
+                if (iss >> jour >> delimiter >> mois >> delimiter >> annee &&
+                    delimiter == '/' &&
+                    jour >= 1 && jour <= 31 &&
+                    mois >= 1 && mois <= 12 &&
+                    annee >= 0 && annee <= 9999) {
+                    // La saisie est valide
+                    break;
+                } else {
+                    std::cout << "Saisie invalide. Veuillez entrer une date valide au format JJ/MM/YYYY." << std::endl;
+                }
+            } catch (const std::exception&) {
+                std::cout << "Saisie invalide. Veuillez entrer une date valide au format JJ/MM/YYYY." << std::endl;
+            }
+        }
+
+        return Date(jour, mois, annee);
 }
 
 string Saisie::saisirString(string message)
