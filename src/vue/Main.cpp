@@ -8,12 +8,12 @@
 #include <iostream>
 #include <string>
 
-
 int main()
 {
-    Service service; 
+    Service service;
     int choix = 0;
-    do{
+    do
+    {
         cout << "0. Quitter" << endl;
         cout << "1. Exécuter tous les tests" << endl;
         cout << "2. Calculer qualité de l'air sur une zone donnée" << endl;
@@ -24,27 +24,42 @@ int main()
         int rayon;
         string idPurificateur;
         pair<Mesure, Mesure> mesures;
-        switch(choix)
+        Mesure mesure;
+        switch (choix)
         {
-            case 1:
-                cout << "Exécution des tests" << endl;
-                break;
-            case 2:
-                coordonnees = Saisie::saisirCoordonnees("Saisissez les coordonnées du point central");
-                rayon = Saisie::saisirInt("Saisissez le rayon (km)");
-                dateDebut = Saisie::saisirDate("Saisissez la date de début");
-                dateFin = Saisie::saisirDate("Saisissez la date de fin");
-                service.voirStatsZone(coordonnees, rayon, dateDebut, dateFin);
-                break;
-            case 3:
-                idPurificateur = Saisie::saisirString("Saisissez l'identifiant du purificateur");
-                mesures = service.consulterImpactPurificateur(idPurificateur);
-                cout << "Valeurs sur 7 jours avant l'activation du purificateur :" << endl << mesures.first << endl;
-                cout << "Valeurs sur les 7 jours avant la désactivation du purificateur :" << endl << mesures.second << endl;
+        case 1:
+            cout << "Exécution des tests" << endl;
+            break;
+        case 2:
+            coordonnees = Saisie::saisirCoordonnees("Saisissez les coordonnées du point central");
+            rayon = Saisie::saisirInt("Saisissez le rayon (km)");
+            dateDebut = Saisie::saisirDate("Saisissez la date de début");
+            dateFin = Saisie::saisirDate("Saisissez la date de fin");
+            mesure = service.voirStatsZone(coordonnees, rayon, dateDebut, dateFin);
+            if (mesure.concentrationNO2 == -1)
+                cout << "Il n'y a pas de capteur dans cette zone pour ce rayon" << endl;
+            else
+                cout << "Statistiques sur la zone : " << endl
+                     << mesure << endl;
+            break;
+        case 3:
+            idPurificateur = Saisie::saisirString("Saisissez l'identifiant du purificateur");
+            mesures = service.consulterImpactPurificateur(idPurificateur);
+            if (mesures.first.concentrationNO2 == -1)
+            {
+                cout << "Il n'y a pas de capteur pour ce rayon" << endl;
+            }
+            else
+            {
+                cout << "Valeurs sur 7 jours avant l'activation du purificateur :" << endl
+                     << mesures.first << endl;
+                cout << "Valeurs sur les 7 jours avant la désactivation du purificateur :" << endl
+                     << mesures.second << endl;
+            }
 
-                break;
+            break;
         }
-    }while(choix != 0);
+    } while (choix != 0);
 
     return 0;
 }

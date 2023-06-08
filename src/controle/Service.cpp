@@ -14,10 +14,11 @@ Mesure Service::voirStatsZone(const Coordonnees &pointCentral, const float &rayo
         }
     }
 
+    
     // Variables de stockage des concentrations
-    Mesure mesureMoyenne;
+    Mesure mesureMoyenne(-1,-1,-1,-1);
     int nombreMesures = 0;
-
+    
     /*
     Pour chaque capteur dans la zone, on utilise la méthode obtenirStatsCapteur
     Cela nous retourne la mesureMoyenne de ce capteur sur la durée
@@ -29,7 +30,7 @@ Mesure Service::voirStatsZone(const Coordonnees &pointCentral, const float &rayo
     }
 
     // Calcul de la moyenne des concentration et renvoi de la mesure moyenne  
-    return mesureMoyenne/nombreMesures;
+    return nombreMesures > 0 ? mesureMoyenne/nombreMesures : mesureMoyenne;
 }
 
 int Service::calculAtmo(Mesure mesure)
