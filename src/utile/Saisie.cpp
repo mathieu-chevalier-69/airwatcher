@@ -24,7 +24,7 @@ bool isNb(string & text)
 {
     text.erase(std::remove(text.begin(), text.end(), '\n'), text.cend());
     string numbers = "0123456789";
-    for(int i = 0 ; i < text.size() ; i++)
+    for(long unsigned int i = 0 ; i < text.size() ; i++)
     {
         if(numbers.find(text[i]) == std::string::npos)
         {
@@ -52,41 +52,26 @@ int Saisie::saisirInt(const string &message)
     return nombre;
 }
 
-Date Saisie::saisirDate(const std::string &message)
+Date Saisie::saisirDate(string message)
 {
-    std::cout << message << std::endl;
-    std::string input;
-    int jour, mois, annee;
-
-    while (true)
+    cout << message << endl;
+    int jour = -1;
+    while((jour > 31) || (jour < 1)) 
     {
-        std::getline(std::cin, input);
-
-        try
-        {
-            std::istringstream iss(input);
-            char delimiter;
-            if (iss >> jour >> delimiter >> mois >> delimiter >> annee &&
-                delimiter == '/' &&
-                jour >= 1 && jour <= 31 &&
-                mois >= 1 && mois <= 12 &&
-                annee >= 0 && annee <= 9999)
-            {
-                // La saisie est valide
-                break;
-            }
-            else
-            {
-                std::cout << "Saisie invalide. Veuillez entrer une date valide au format JJ/MM/YYYY." << std::endl;
-            }
-        }
-        catch (const std::exception &)
-        {
-            std::cout << "Saisie invalide. Veuillez entrer une date valide au format JJ/MM/YYYY." << std::endl;
-        }
+        jour = saisirInt("Veuillez saisir le jour: ");
+    }  
+    int mois = -1;
+    while((mois < 1) || (mois > 12)) 
+    {
+        mois = saisirInt("Veuillez saisir le mois: ");
+    } 
+    int annee = -1;
+    while((annee < 1)) 
+    {
+       annee = saisirInt("Veuillez saisir l'annee: ");
     }
-
-    return Date(jour, mois, annee);
+    Date d = Date(jour,mois,annee);
+    return d;
 }
 
 string Saisie::saisirString(string message)
