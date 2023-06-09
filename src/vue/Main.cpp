@@ -29,6 +29,7 @@ int main()
         {
         case 1:
             cout << "Exécution des tests" << endl;
+            Test::testerCapteurDansZone();
             break;
         case 2:
             coordonnees = Saisie::saisirCoordonnees("Saisissez les coordonnées du point central");

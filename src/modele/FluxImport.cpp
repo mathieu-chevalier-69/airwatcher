@@ -35,6 +35,7 @@ vector<Capteur> FluxImport::importerCapteurs(string cheminDossier)
             }
         }
     }
+
     // Chargement des mesures
     donnees = LecteurCsv::lireCsv(cheminDossier + "measurements.csv");
     map<string, map<Date, Mesure>> mesures;
@@ -56,9 +57,11 @@ vector<Capteur> FluxImport::importerCapteurs(string cheminDossier)
                 mesure.setAttribute((*iterateur)[2], stof((*iterateur)[3]));
                 mesures[(*iterateur)[1]].insert({date, mesure});
             }
+
         }
         else
         {
+
             // Le capteur ID existe pas
             Mesure mesure;
             mesure.setAttribute((*iterateur)[2], stof((*iterateur)[3]));
