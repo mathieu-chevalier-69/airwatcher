@@ -26,6 +26,7 @@ int main()
         pair<Mesure, Mesure> mesures;
         Mesure mesure;
         int ATMO;
+        int rayon;
         switch (choix)
         {
         case 1:
@@ -50,7 +51,8 @@ int main()
             break;
         case 3:
             idPurificateur = Saisie::saisirString("Saisissez l'identifiant du purificateur");
-            mesures = service.consulterImpactPurificateur(idPurificateur);
+            rayon = Saisie::saisirInt("Veuillez saisir un rayon pour votre zone d'interet");
+            mesures = service.consulterImpactPurificateur(idPurificateur, rayon);
             if (mesures.first.concentrationNO2 == -1)
             {
                 cout << "Il n'y a pas de capteur pour ce rayon" << endl;

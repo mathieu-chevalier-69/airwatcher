@@ -21,7 +21,7 @@ class Service{
         //Methodes de la classe 
         Mesure voirStatsZone(const Coordonnees & pointCentral,const float & rayon,const Date & dateDebut,const Date & dateFin);
 
-        pair<Mesure, Mesure> consulterImpactPurificateur(std::string idPurificateur);
+        pair<Mesure, Mesure> consulterImpactPurificateur(std::string idPurificateur, int rayon);
 
         std::vector<Capteur> voirCapteursStatsSimilaires(std::string idCapteur);
 
