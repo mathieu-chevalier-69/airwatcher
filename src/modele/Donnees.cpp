@@ -5,6 +5,7 @@
 Donnees::Donnees(string cheminDossier)
 {
     FluxImport flux;
+    cout << "Importation des données en cours" << endl;
     clock_t avantCapteurs = clock();
     donneesCapteurs.listeCapteurs = flux.importerCapteurs(cheminDossier);
     clock_t apresCapteurs = clock();
