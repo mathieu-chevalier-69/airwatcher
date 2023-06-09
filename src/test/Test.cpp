@@ -49,7 +49,7 @@ bool Test::testerMesurerEfficacitePurificateur(){
     Donnees donnees(directoryPath);
     Service service(donnees);
 
-    pair<Mesure, Mesure> resultatTest = service.consulterImpactPurificateur("Cleaner0");
+    pair<Mesure, Mesure> resultatTest = service.consulterImpactPurificateur("Cleaner0", 120);
     Mesure mesureAvantTemoin(100,100,100,100);
     Mesure mesureApresTemoin(0,0,0,0);
 
