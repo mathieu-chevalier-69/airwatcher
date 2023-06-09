@@ -16,14 +16,50 @@ bool Test::testerCapteurDansZone(){
     Mesure mesureTest = service.voirStatsZone(pointCentral, rayon, dateDebut, dateFin);
 
     
-    cout << donnees.donneesCapteurs.listeCapteurs[0].mesures.cbegin()->second << endl;
-    cout << "Test : voir les statistiques sur une zone" << endl;
+    cout << "Test 1 : voir les statistiques sur une zone" << endl;
+    cout << "Resultats attendus : " << mesureTemoin << endl;
+    cout << "Resultats obtenus : " << mesureTest << endl ;
+
+    bool testValide = mesureTemoin.concentrationNO2 == mesureTest.concentrationNO2 ? true : false;
+    string reponse = testValide == true ? "valide" : "invalide";
+    cout << "Le test 1 est donc " << reponse << endl << endl; 
+
+    //Test unitaire 2 sur la méthode dans le cas ou aucun capteur n'est présent dans la zone
+    //Doit retourner une valeur de -1 -1 -1 -1 pour la mesure
+    pointCentral = Coordonnees(100,100);
+    mesureTemoin = Mesure(-1,-1,-1,-1);
+    mesureTest = service.voirStatsZone(pointCentral, rayon, dateDebut, dateFin);
+
+    bool test2Valide = mesureTemoin.concentrationNO2 == mesureTest.concentrationNO2 ? true : false;
+    reponse = testValide == true ? "valide" : "invalide";    
+    
+    cout << "Test 2 : Voir les statistiques d'une zone sans capteurs" << endl;
     cout << "Resultats attendus : " << mesureTemoin << endl;
     cout << "Resultats obtenus : " << mesureTest << endl;
+    cout << "Le test 2 est donc " << reponse << endl << endl; 
 
-    string testValide = mesureTemoin.concentrationNO2 == mesureTest.concentrationNO2 ? "valide" : "invalide";
-    cout << "Le test est donc " << testValide << endl; 
+    
 
+    return testValide && test2Valide;
+}
 
-    return testValide == "valide";
+bool Test::testerMesurerEfficacitePurificateur(){
+
+    string directoryPath = "./dataset/dataset-test/";
+    Donnees donnees(directoryPath);
+    Service service(donnees);
+
+    pair<Mesure, Mesure> resultatTest = service.consulterImpactPurificateur("Cleaner0");
+    Mesure mesureAvantTemoin(100,100,100,100);
+    Mesure mesureApresTemoin(0,0,0,0);
+
+    cout << "Test 1 : Consulter l'impact d'un purificateur d'air" << endl;
+    cout << "Resultats attendus : " << mesureAvantTemoin << endl;
+    cout << "et : " << mesureApresTemoin << endl;
+    cout << "Resultats obtenus : " << resultatTest.first << endl;
+    cout << "et : " << resultatTest.second << endl;
+
+    
+    cout << "Le test 2 est donc " << reponse << endl << endl; 
+
 }
