@@ -40,9 +40,11 @@ int main()
             dateFin = Saisie::saisirDate("Saisissez la date de fin");
             mesure = service.voirStatsZone(coordonnees, rayon, dateDebut, dateFin);
             ATMO = service.calculAtmo(mesure);
-            if (mesure.concentrationNO2 == -1)
+            if (mesure.concentrationNO2 == -2)
                 cout << "Il n'y a pas de capteur dans cette zone pour ce rayon" << endl;
-            else
+            else if(mesure.concentrationNO2 == -1)
+                cout << "Il n'y a pas de mesure pour les capteurs sur cette période" << endl;
+            else 
                 cout << "Statistiques sur la zone : " << endl
                      << mesure << endl
                      << "ATMO :" << ATMO << endl; 
@@ -54,7 +56,7 @@ int main()
             mesures = service.consulterImpactPurificateur(idPurificateur, rayon);
             if (mesures.first.concentrationNO2 == -1)
             {
-                cout << "Il n'y a pas de capteur pour ce rayon" << endl;
+                cout << "Identifiant du purificateur invalide ou il n'y a pas de capteur pour ce rayon" << endl;
             }
             else
             {

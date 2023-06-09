@@ -13,6 +13,10 @@ Mesure Service::voirStatsZone(const Coordonnees &pointCentral, const float &rayo
             capteursDansZone.push_back(capteur);
         }
     }
+    
+    if(capteursDansZone.size() == 0){
+        return Mesure(-2,-2,-2,-2);
+    }
 
     // Variables de stockage des concentrations
     Mesure mesureMoyenne(0,0,0,0);
