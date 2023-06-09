@@ -25,11 +25,13 @@ int main()
         string idPurificateur;
         pair<Mesure, Mesure> mesures;
         Mesure mesure;
+        int ATMO;
         switch (choix)
         {
         case 1:
             cout << "Exécution des tests" << endl;
             Test::testerCapteurDansZone();
+            Test::testerMesurerEfficacitePurificateur();
             break;
         case 2:
             coordonnees = Saisie::saisirCoordonnees("Saisissez les coordonnées du point central");
@@ -37,11 +39,14 @@ int main()
             dateDebut = Saisie::saisirDate("Saisissez la date de début");
             dateFin = Saisie::saisirDate("Saisissez la date de fin");
             mesure = service.voirStatsZone(coordonnees, rayon, dateDebut, dateFin);
+            ATMO = service.calculAtmo(mesure);
             if (mesure.concentrationNO2 == -1)
                 cout << "Il n'y a pas de capteur dans cette zone pour ce rayon" << endl;
             else
                 cout << "Statistiques sur la zone : " << endl
-                     << mesure << endl;
+                     << mesure << endl
+                     << "ATMO :" << ATMO << endl; 
+                
             break;
         case 3:
             idPurificateur = Saisie::saisirString("Saisissez l'identifiant du purificateur");

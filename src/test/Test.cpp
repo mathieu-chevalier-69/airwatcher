@@ -59,7 +59,10 @@ bool Test::testerMesurerEfficacitePurificateur(){
     cout << "Resultats obtenus : " << resultatTest.first << endl;
     cout << "et : " << resultatTest.second << endl;
 
-    
-    cout << "Le test 2 est donc " << reponse << endl << endl; 
-
+    bool testValide = (mesureApresTemoin.concentrationNO2 == resultatTest.second.concentrationNO2)
+                    && (mesureAvantTemoin.concentrationNO2 == resultatTest.first.concentrationNO2)
+                     ? true : false;
+    string reponse = testValide ? "valide" : "invalide";              
+    cout << "Le test 1 est donc " << reponse << endl << endl; 
+    return testValide;
 }
