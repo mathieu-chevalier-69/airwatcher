@@ -1,12 +1,4 @@
-/*************************************************************************
-                           DonneesPurificateurs  -  description
-                             -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
-*************************************************************************/
 
-//---------- Interface de la classe <DonneesPurificateurs> (fichier DonneesPurificateurs.h) ----------------
 #if ! defined ( DonneesPurificateurs_H )
 #define DonneesPurificateurs_H
 
@@ -17,13 +9,6 @@
 //------------------------------------------------------------- Constantes
 #include<vector>
 
-//------------------------------------------------------------------ Types
-
-//------------------------------------------------------------------------
-// Rôle de la classe <DonneesPurificateurs>
-//
-//
-//------------------------------------------------------------------------
 typedef vector<Purificateur> ListePurificateur;
 class DonneesPurificateurs 
 {
