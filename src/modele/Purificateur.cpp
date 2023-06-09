@@ -5,7 +5,7 @@ using namespace std;
 
 Purificateur::Purificateur()
 {
-
+    startTime = Date(-1,-1,-1);
 }
 
 Purificateur::Purificateur(string i, Coordonnees coords, Date debut, Date fin, string entreprise)

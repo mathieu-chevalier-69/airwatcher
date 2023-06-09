@@ -90,6 +90,10 @@ Mesure Service::obtenirStatsCapteur(Capteur capteur, Date dateDebut, Date dateFi
 pair<Mesure, Mesure> Service::consulterImpactPurificateur(string idPurificateur, int rayon)
 {
     Purificateur purificateurRecupere = donnees.donneesPurificateurs.obtenirPurificateurParId(idPurificateur);
+    if(purificateurRecupere.startTime.jour == -1){
+        Mesure mesureTemoin(-1,-1,-1,-1);
+        return make_pair(mesureTemoin,mesureTemoin);
+    }
     Date debutMoins7 = purificateurRecupere.startTime - 7;
     Date debutMoins1 = purificateurRecupere.startTime - 1;
     Date finPlus1 = purificateurRecupere.stopTime - 7;

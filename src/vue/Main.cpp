@@ -54,9 +54,13 @@ int main()
             idPurificateur = Saisie::saisirString("Saisissez l'identifiant du purificateur");
             rayon = Saisie::saisirInt("Veuillez saisir un rayon pour votre zone d'interet");
             mesures = service.consulterImpactPurificateur(idPurificateur, rayon);
-            if (mesures.first.concentrationNO2 == -1)
+            if (mesures.first.concentrationNO2 == -2)
             {
-                cout << "Identifiant du purificateur invalide ou il n'y a pas de capteur pour ce rayon" << endl;
+                cout << "Il n'y a pas de capteur pour ce rayon" << endl;
+            }
+            else if(mesures.first.concentrationNO2 == -1)
+            {
+                cout << "Identifiant du purificateur invalide" << endl;
             }
             else
             {
