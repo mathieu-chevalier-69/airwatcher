@@ -26,7 +26,6 @@ int main()
         pair<Mesure, Mesure> mesures;
         Mesure mesure;
         int ATMO;
-        int rayon;
         switch (choix)
         {
         case 1:
